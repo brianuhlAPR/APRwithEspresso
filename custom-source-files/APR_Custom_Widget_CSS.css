@@ -1,0 +1,55 @@
+.guarantee-wrap {
+    display: inline-block;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.block-block {
+    padding: 4px;
+    display: inline-block;
+}
+.guarantee-block {
+    border: 1px solid #6CBB3C;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}
+.course-text {
+    font-size: 15px;
+    margin-left: 4px;
+    margin-top: 2px;
+}
+.date-guarantee-text {
+    color: #6CBB3C;
+    float: left;
+}
+.date-guarantee-text a {
+    color: inherit!important;
+}
+.ee-upcoming-events-widget-li img.date-guarantee-course-img {
+    width: auto;
+    height: 20px!important;
+    color: #6CBB3C;
+    float: left;
+}
+.cta-button {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 20px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 0;
+}
+.course-info-csm {
+    background: #f0831e;
+    border: none;
+    color: #fff;
+}
+.course-info-button {
+    margin-top: 0;
+    -webkit-transition: background-color .5s;
+    transition: background-color .5s;
+}
