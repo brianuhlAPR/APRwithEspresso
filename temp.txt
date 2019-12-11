@@ -1,0 +1,25 @@
+<tr class="item">
+    <td>[LINE_ITEM_NAME][LINE_ITEM_TAXABLE_*]</td>
+    <td colspan="2">[LINE_ITEM_DESCRIPTION]
+        <p class="ticket-note">This ticket can be used once at [TKT_USES_* schema=any] of the dates/times below.</p>
+    </td>
+    <td class="item_c">[LINE_ITEM_QUANTITY]</td>
+    <td class="item_c">[LINE_ITEM_AMOUNT]</td>
+    <td class="item_r">[LINE_ITEM_TOTAL]</td>
+</tr>
+
+<tr class="item">
+    <td>[LINE_ITEM_NAME][LINE_ITEM_TAXABLE_*]</td>
+    <td colspan="2">[LINE_ITEM_DESCRIPTION]
+        <p class="ticket-note">This ticket can be used once at [TKT_USES_* schema=any] of the dates/times below.</p>
+    </td>
+    <td class="item_c">[LINE_ITEM_QUANTITY]</td>
+    <td class="item_c">[LINE_ITEM_AMOUNT]</td>
+    <td class="item_r">[LINE_ITEM_TOTAL]</td>
+</tr>
+[PRICE_MODIFIER_LINE_ITEM_LIST]
+<tr class="total_tr odd">
+    <td colspan="4"></td>
+    <td class="total" nowrap="nowrap">Ticket Total:</td>
+    <td class="item_r">[LINE_ITEM_TOTAL]</td>
+</tr>

@@ -1,0 +1,109 @@
+.site-header
+{
+background-color: #1e467c;
+}
+.nav-primary .genesis-nav-menu a:focus, .nav-primary .genesis-nav-menu a:hover, .nav-primary .genesis-nav-menu .current-menu-item > a {
+border-bottom: 3px solid #fff;
+color: #fff;
+}
+.genesis-nav-menu a {
+color: #ddd;
+}
+.genesis-nav-menu .sub-menu a {
+color: #333;
+}
+.spco-ticket-info-dv .line-item-desc-spn, .spco-payment-info-dv .line-item-desc-spn {
+display: none;
+}
+.ee-reg-form-attendee-dv legend
+{
+display: none;
+}
+.hero-section .full-width-image
+{
+margin-top: -350px;
+}
+.hero-title
+{
+font-size: 4rem;
+color: #ffffff;
+font-family: 'Source Sans Pro', sans-serif!important;
+}
+.site-header > .wrap
+{
+border: none;
+}
+#breakthrough-page-title
+{
+background-color: rgba(0,0,0,0.4);
+}
+.front-page .widget-title {
+font-family: inherit!important;}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+font-family: inherit!important;
+}
+#breakthrough-page-title
+{
+    background-color: transparent;
+}
+
+h1.entry-title
+{
+    margin-bottom: 40px;
+}
+h1
+{
+    font-size: 5rem;
+    letter-spacing: normal!important;
+}
+h2
+{
+    font-size: 4rem;
+    letter-spacing: normal!important;
+}
+h3
+{
+    font-size: 3rem;
+    letter-spacing: normal!important;
+}
+h4
+{
+    font-size: 2rem;
+    letter-spacing: normal!important;
+}
+h5
+{
+    font-size: 1rem;
+    letter-spacing: normal!important;
+}
+a
+{
+    color: #2842a1;
+    text-decoration: none;
+}
+p a
+{
+    text-decoration: underline;
+}
+a:visited
+{
+    color: #00529b;
+}
+blockquote
+{
+    font-size: 2.1rem;
+    font-family: inherit!important;
+    border-top: 1px solid #00529b;
+    border-bottom: 1px solid #00529b;
+    padding: 15px 0;
+}
+blockquote::before
+{
+    font-family: inherit!important;
+    left: -25px;
+}

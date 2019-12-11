@@ -1,0 +1,47 @@
+.highlight-box-right, .blog-sidecar-right
+{
+    float: right;
+    width: 40%;
+    background: #efefef;
+    padding: 20px;
+    margin: 20px 0 20px 20px;
+}
+.highlight-box-left
+{
+    float: left;
+    width: 40%;
+    background: #efefef;
+    padding: 20px;
+    margin: 20px 20px 20px 0;
+}
+.highlight-box-full
+{
+    background: #efefef;
+    padding: 20px;
+    margin: 20px 0;
+}
+.casestudy
+{
+    margin: 20px 0px 20px 40px;
+    padding: 20px;
+    border-top: 1px solid #0B4F97;
+    background: #CEDBEA;
+    color: #0b4f97;
+    font-size: 14px;
+    line-height: 30px;
+}
+.call-to-action
+{
+    background: #79bdea;
+    margin: 20px;
+}
+.footnote
+{
+    font-size: 0.8em;
+    color: #6a6a6a;
+}
+.image-credit
+{
+    font-style: italic;
+    color: #6a6a6a;
+}
