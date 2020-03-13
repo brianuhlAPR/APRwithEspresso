@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Event Espresso - Format Venue adresses
+Plugin Name: Event Espresso - Format Venue addresses
 Description: Improves the appearance of venue addresses
 Version: 1.0
 Author: Brian Uhl

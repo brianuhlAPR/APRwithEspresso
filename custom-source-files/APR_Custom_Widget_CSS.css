@@ -3,7 +3,9 @@
     width: 100%;
     margin: 10px 0;
 }
-
+.ee-upcoming-events-widget-ul-a-csm .guarantee-wrap {
+    display: none;
+}
 .block-block {
     padding: 4px;
     display: inline-block;
@@ -15,25 +17,88 @@
     border-radius: 30px;
 }
 .course-text {
-    font-size: 15px;
+    font-size: 14px;
     margin-left: 4px;
     margin-top: 2px;
 }
 .date-guarantee-text {
     color: #6CBB3C;
     float: left;
+    padding: 0 2px;
 }
 .date-guarantee-text a {
     color: inherit!important;
 }
 .ee-upcoming-events-widget-li img.date-guarantee-course-img {
     width: auto;
-    height: 20px!important;
+    height: 22px!important;
     color: #6CBB3C;
     float: left;
+    margin-left: 1px;
 }
+.widget_custom-ee-upcoming-events-widget ul > li:last-of-type {
+    padding-bottom: 20px!important;
+}
+.widget_custom-ee-upcoming-events-widget ul > li {
+    padding-left: 0!important;
+    text-align: center;
+}
+.widget_custom-ee-upcoming-events-widget .widget-title { display: none; }
+.ee-upcoming-events-widget-ul {
+    margin: 0!important;
+    display: table;
+    border-collapse: separate;
+    border-spacing: 10px;
+}
+.ee-upcoming-events-widget-ul li {
+    display: table-cell;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 33%;
+    padding-bottom: 20px!important;
+    margin: 0 0 15px 0;
+    text-align: center;
+    background-color: #fff;
+}
+.ee-event-datetimes-ul { overflow: hidden; }
+.ee-event-datetimes-li { width: 100%!important; }
+.ee-upcoming-events-widget-title-h5 { min-height: 60px; }
+.ee-upcoming-events-widget-title-h5 a { font-size: 2.5rem!important; }
+.ee-event-datetimes-li strong, .ee-event-datetimes-li-timerange, .dashicons-clock, .dashicons-calendar, .ee-event-datetimes-li form, .ee-event-datetimes-li br { display: none; }
+.ee-event-datetimes-li-daterange { padding: 0 20px; }
+
+.ee-upcoming-events-widget-ul-csm, .ee-upcoming-events-widget-ul-cspo, .ee-upcoming-events-widget-ul-a-csm { padding: 30px; background: #EBEBEA; }
+
+.ee-upcoming-events-widget-ul-csm li, .ee-upcoming-events-widget-li_csm { border: 2px solid #f0831e; }
+.ee-upcoming-events-widget-ul-csm .ee-upcoming-events-widget-title-h5 a, .ee-upcoming-events-widget-li_csm  .ee-upcoming-events-widget-title-h5 a { color: #f0831e!important; }
+.course-info-csm, .ee-upcoming-events-widget-li_csm .course-info-button { background: #f0831e; color: #fff; }
+
+.ee-upcoming-events-widget-ul-cspo li, .ee-upcoming-events-widget-li_cspo { border: 2px solid #c64116; }
+.ee-upcoming-events-widget-ul-cspo .ee-upcoming-events-widget-title-h5 a, .ee-upcoming-events-widget-li_cspo  .ee-upcoming-events-widget-title-h5 a { color: #c64116!important; }
+.course-info-cspo, .ee-upcoming-events-widget-li_cspo .course-info-button { background: #c64116; color: #fff; }
+
+.ee-upcoming-events-widget-ul-a-csm li, .ee-upcoming-events-widget-li_a-csm { border: 2px solid #fbb722; }
+.ee-upcoming-events-widget-ul-a-csm .ee-upcoming-events-widget-title-h5 a, .ee-upcoming-events-widget-li_a-csm  .ee-upcoming-events-widget-title-h5 a { color: #fbb722!important; }
+.course-info-a-csm, .ee-upcoming-events-widget-li_a-csm .course-info-button { background: #fbb722; color: #fff; margin-top: 10px!important;}
+
+.footer-widget-area .ee-upcoming-events-widget-li {
+    display: inline-block;
+    width: 100%!important;
+    border: none;
+    padding-left: inherit!important;
+    padding-bottom: 10px!important;
+    margin: 0 0 12px 0!important;
+    text-align: left!important;
+    font-family: HelveticaNeue, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    border-bottom: 1px solid #696969;
+}
+.footer-widget-area .ee-upcoming-events-widget-title-h5 { min-height: unset; }
+.footer-widget-area .ee-upcoming-events-widget-title-h5 a { font-size: 14px!important; font-weight: normal; }
+.footer-widget-area .ee-upcoming-events-widget-title-h5 { margin: 0!important; }
+
 .cta-button {
-    font-size: 12px;
+    font-size: 1.6rem;
     text-transform: uppercase;
     font-weight: 700;
     line-height: 40px;
@@ -43,13 +108,101 @@
     display: inline-block;
     border-radius: 0;
 }
-.course-info-csm {
-    background: #f0831e;
-    border: none;
-    color: #fff;
-}
 .course-info-button {
     margin-top: 0;
     -webkit-transition: background-color .5s;
     transition: background-color .5s;
+}
+.display_event_location {
+    margin-top: 5px;
+}
+.display_event_dates {
+
+}
+
+.inner-container { max-width: 1000px; margin: 0 auto; }
+#testimonial-section { padding: 60px 0; background-color: rgba(222,240,250,.9); }
+#testimonial-container { padding: 0 60px; margin: 0 auto; display: table; }
+#testimonial-container > div { display: table-cell; }
+.testimonial-left { text-align: center; vertical-align: middle; min-height: 120px; width: 80px; }
+.testimonial-right { text-align: right; vertical-align: middle; min-height: 120px; }
+.testimonial-center { text-align: center; vertical-align: middle; min-height: 120px; }
+.testimonial-text-container {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 30px;
+    color: #5ab6e8;
+}
+.testimonial-text { font-size: 2.4rem; line-height: 25px; font-weight: 700; }
+.testimonial-attributed { margin-top: 20px; }
+.testimonial-attributed-name { font-style: italic; }
+#Layer_1 { fill: #5ab6e8; }
+
+
+@media only screen and (max-width: 767px) {
+    ul.ee-upcoming-events-widget-ul li {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .testimonial-left, .testimonial-right {
+        display: none;
+        margin: 0;
+        padding: 0;
+        min-height: 0;
+        width: 0;
+    }
+    .testimonial-left svg, .testimonial-right svg {
+        display: none;
+    }
+}
+.width25percent {
+    width: 25%!important;
+}
+.width33percent {
+    width: 33%!important;
+}
+.width50percent {
+    width: 50%!important;
+}
+.ee-upcoming-events-widget-list-container {
+    margin-bottom: 30px;
+}
+.ee-upcoming-events-widget-list-row {
+    overflow: hidden;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+}
+.ee-upcoming-events-widget-list-date {
+    background-color: #e0e0e0;
+    border: 1px solid #6a6a6a;
+    border-radius: 4px;
+    width: 150px;
+    text-align: center;
+}
+.ee-upcoming-events-widget-list-detail-row {
+    padding-top: 4px;
+    overflow: hidden;
+    display: block;
+}
+.ee-upcoming-events-widget-list-cma-logo {
+    width: 25px;
+    height: 25px;
+    float: left;
+}
+.ee-upcoming-events-widget-list-location {
+    float: left;
+    font-weight: bold;
+    padding: 0 10px;
+}
+.ee-upcoming-events-widget-list-title {
+    float: left;
+}
+.ee-upcoming-events-widget-list-action {
+    float: right;
+}
+.sold_out {
+    color: #ff0000;
 }

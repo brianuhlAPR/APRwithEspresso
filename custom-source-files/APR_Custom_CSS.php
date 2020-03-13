@@ -75,7 +75,7 @@ function my_mce_before_init_insert_formats( $init_array ) {
 // Attach callback to 'tiny_mce_before_init'
 add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
 
-wp_enqueue_style( 'APR_Custom_CSS', get_template_directory_uri() . '/APR_Custom_CSS.css');
+wp_enqueue_style( 'APR_Custom_CSS', get_stylesheet_directory_uri() . '/APR_Custom_CSS.css');
 
 function my_theme_add_editor_styles() {
     add_editor_style( 'APR_Editor_Custom_CSS.css' );
