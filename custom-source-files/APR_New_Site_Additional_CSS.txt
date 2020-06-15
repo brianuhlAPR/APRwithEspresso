@@ -1,0 +1,45 @@
+.site-header { background-color: #1e467c; }
+.nav-primary .genesis-nav-menu a:focus, .nav-primary .genesis-nav-menu a:hover, .nav-primary .genesis-nav-menu .current-menu-item > a { border-bottom: 3px solid #fff; color: #fff; }
+.genesis-nav-menu a, .genesis-nav-menu a:visited { color: #ddd; }
+.genesis-nav-menu .sub-menu a { color: #333; }
+.spco-ticket-info-dv .line-item-desc-spn, .spco-payment-info-dv .line-item-desc-spn { display: none; }
+.ee-reg-form-attendee-dv legend { display: none; }
+.hero-section .full-width-image { margin-top: -350px; }
+.hero-title { font-size: 4rem; color: #ffffff; font-family: 'Source Sans Pro', sans-serif!important; }
+.site-header > .wrap { border: none; }
+#breakthrough-page-title { background-color: rgba(0,0,0,0.4); }
+.front-page .widget-title { font-family: inherit!important; }
+h1, h2, h3, h4, h5, h6 { font-family: inherit!important; }
+#breakthrough-page-title { background-color: transparent; }
+h1.entry-title { margin-bottom: 40px; }
+h1 { font-size: 5rem; letter-spacing: normal!important; }
+h2 { font-size: 4rem; letter-spacing: normal!important; }
+h3 { font-size: 3rem; letter-spacing: normal!important; }
+h4 { font-size: 2rem; letter-spacing: normal!important; }
+h5 { font-size: 1rem; letter-spacing: normal!important; }
+a { color: #2842a1; text-decoration: none; }
+p a { text-decoration: underline; }
+a:visited { color: #00529b; }
+blockquote { font-size: 2.1rem; font-family: inherit!important; border-top: 1px solid #00529b; border-bottom: 1px solid #00529b; padding: 15px 0; }
+blockquote::before { font-family: inherit!important; left: -25px; }
+.ee-registrations-list tr td:nth-of-type(2n), .ee-registrations-list tr th:nth-of-type(2n) { visibility: hidden; }
+.ee-registration-details-dv a { display: none; }
+#espresso-thank-you-page-ajax-content-dv #ee-ajax-loading-dv { display: none; }
+ul.ee-upcoming-events-widget-ul li { 
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+width: 25%;
+padding: 20px 5px;
+margin: 0 0 15px 0;
+text-align: center;
+background-color: #fff;
+width: 100%;
+}
+.ee-event-datetimes-ul { overflow: hidden; }
+.ee-upcoming-events-widget-li { border: 2px solid #f0831e; }
+.ee-event-datetimes-li { width: 100%!important; }
+.ee-upcoming-events-widget-title-h5 { margin: 0;}
+.ee-upcoming-events-widget-title-h5 a { font-size: 2.5rem!important; color: #f0831e!important; }
+.ee-event-datetimes-li strong, .ee-event-datetimes-li-timerange, .dashicons-clock, .dashicons-calendar, .ee-event-datetimes-li form, .ee-event-datetimes-li br { display: none; }
+.ee-event-datetimes-li-daterange { padding: 0 20px; }
