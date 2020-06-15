@@ -21,3 +21,10 @@ function my_change_ticket_row_price($unit_price, $line_item, $tax_rate)
     return $unit_price . ' + tax';
 }
 
+add_filter( 'FHEE__EE_Default_Line_Item_Display_Strategy___item_row__total', 'my_change_ticket_row_total', 10, 3);
+function my_change_ticket_row_total($row_total, $line_item, $tax_rate)
+{
+    $unit_price = EEH_Template::format_currency($line_item->ticket()->base_price()->amount(),false,false);
+    $row_total = EEH_Template::format_currency($line_item->unit_price() * $line_item->quantity(), false, false);
+    return $row_total . ' + tax';
+}
