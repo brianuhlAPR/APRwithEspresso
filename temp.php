@@ -226,3 +226,59 @@ Stack trace:\n#0 /nas/content/live/aprthemetest1/wp-content/plugins/EE_Promo_Cod
 #4 /nas/content/live/aprthemetest1/wp-cron.php(44): require_once('/nas/content/li...')\n
 #5 {main}\n thrown in /nas/content/live/aprthemetest1/wp-content/plugins/EE_Promo_Code_Limiter/EE_Promo_Code_Limiter.php on line 10,
 referer: https://aprthemetest1.wpengine.com/wp-cron.php?doing_wp_cron=1583432552.5522921085357666015625
+
+
+
+
+echo '<div style="border: 3px solid red; padding: 20px; font-weight: bold; font-size: 1.1em; margin: 20px auto; max-width: 1000px;">';
+    echo '<span style="color: red;">Compensating for COVID-19 Impact:</span> <span style="color: green;">VIRTUAL SCRUM TRAINING</span>';
+    echo '<div>In response to the current pandemic, Scrum Alliance&reg; has temporarily authorized us to deliver Certified Scrum training virtually to protect attendees if needed.</div>';
+    echo '<ul style="margin-top: 8px;">';
+        echo '<li>Virtual workshop attendees may attend a future in-person workshop for the same course at no extra cost.</li>';
+        echo '<li>April workshops will be virtual.</li>';
+        echo '<li>May/June workshops will be virtual if needed.</li>';
+        echo '</ul>';
+    echo '<div>As decisions and details become available, they will be shared directly with course registrants.</div>';
+    echo '<div style="margin-top: 8px;">QUESTIONS? CONCERNS? Email <a href='mailto:contact@agilepainrelief.com'>contact@agilepainrelief.com</a></div>';
+echo '</div>';
+
+
+
+
+
+if ( $checkout instanceof EE_Checkout ) {
+$transaction = $checkout->transaction;
+if ( $transaction instanceof EE_Transaction ) {
+$registrations = $transaction->registrations();
+$registration = reset( $registrations );
+if ( $registration instanceof EE_Registration ) {
+$event = $registration->event();
+if ( $event instanceof EE_Event ) {
+// logic here based on event
+}
+}
+}
+}
+
+
+
+
+$VNU_ID = espresso_venue_id( $event->ID() ); //Get venue id
+espresso_venue_description( $VNU_ID ); //Venue description
+espresso_venue_excerpt( $VNU_ID );
+//Venue short description
+espresso_venue_address('multiline', $VNU_ID );
+
+
+testcode
+
+Brian
+
+brianeuhl@gmail.com
+
+uhlbrian@gmail.com
+
+[RECIPIENT_ANSWER_* Purchaser Email]
+
+6081874 - 6083842
+6077583	- 6079551

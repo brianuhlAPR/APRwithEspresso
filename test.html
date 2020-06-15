@@ -1,249 +1,789 @@
-<em>This resource is under continual improvement. Please <a href="/contact-us">let us know</a> if you experience any bugs or issues.</em>
+<?php
+/*
+Template Name: Home Page 2017
+*/
 
-<div class="resource-main-menu">
-    <div class="resource-main-menu-item"><a href="/scrummaster-resources-and-references">SCRUM MASTER RESOURCES</a></div>
-    <div class="resource-main-menu-item"><a href="/product-owner-resources-and-references">SCRUM PRODUCT OWNER RESOURCES</a></div>
-    <div class="resource-main-menu-item"><a href="/scrum-developer-resources-and-references">SCRUM DEVELOPER RESOURCES</a></div>
-    <div class="resource-main-menu-item-selected">LEADERSHIP RESOURCES</div>
+define('IS_FULLWIDTH', TRUE);
+
+// get page meta fields to customize sections
+
+// Hero banner
+$hero_image = wp_get_attachment_url( get_post_meta($post->ID,'banner_image',true) );
+$hero_logo = wp_get_attachment_url( get_post_meta($post->ID,'banner_logo',true) );
+$hero_header = get_post_meta($post->ID,'banner_header',true);
+$hero_cta = get_post_meta($post->ID,'banner_cta_text',true);
+$hero_url = get_post_meta($post->ID,'banner_cta_url',true);
+
+// echo '<br>HERO IMG: ' . print_r($hero_image);
+// echo 'HERO IMG URL: ' . $hero_image;
+// echo '<br>HERO LOGO: ' . $hero_logo;
+// echo '<br>HERO HEADER: ' . $hero_header;
+// echo '<br>HERO CTA: ' . $hero_cta;
+// echo '<br>HERO URL: ' . $hero_url;
+
+// News boxes
+
+$news1_icon = get_post_meta($post->ID,'news1_icon',true);
+$news1_type = get_post_meta($post->ID,'news1_type',true);
+$news1_headline = get_post_meta($post->ID,'news1_headline',true);
+$news1_cta = get_post_meta($post->ID,'news1_cta',true);
+$news1_url = get_post_meta($post->ID,'news1_url',true);
+
+// echo '<br>NEWS 1 ICON: ' . $news1_icon;
+// echo '<br>NEWS 1 TYPE: ' . $news1_type;
+// echo '<br>NEWS 1 HEADLINE: ' . $news1_headline;
+// echo '<br>NEWS 1 CTA: ' . $news1_cta;
+// echo '<br>NEWS 1 URL: ' . $news1_url;
+
+$news2_icon = get_post_meta($post->ID,'news2_icon',true);
+$news2_type = get_post_meta($post->ID,'news2_type',true);
+$news2_headline = get_post_meta($post->ID,'news2_headline',true);
+$news2_cta = get_post_meta($post->ID,'news2_cta',true);
+$news2_url = get_post_meta($post->ID,'news2_url',true);
+
+// echo '<br>NEWS 2 ICON: ' . $news2_icon;
+// echo '<br>NEWS 2 TYPE: ' . $news2_type;
+// echo '<br>NEWS 2 HEADLINE: ' . $news2_headline;
+// echo '<br>NEWS 2 CTA: ' . $news2_cta;
+// echo '<br>NEWS 2 URL: ' . $news2_url;
+
+$news3_icon = get_post_meta($post->ID,'news3_icon',true);
+$news3_type = get_post_meta($post->ID,'news3_type',true);
+$news3_headline = get_post_meta($post->ID,'news3_headline',true);
+$news3_cta = get_post_meta($post->ID,'news3_cta',true);
+$news3_url = get_post_meta($post->ID,'news3_url',true);
+
+// echo '<br>NEWS 3 ICON: ' . $news3_icon;
+// echo '<br>NEWS 3 TYPE: ' . $news3_type;
+// echo '<br>NEWS 3 HEADLINE: ' . $news3_headline;
+// echo '<br>NEWS 3 CTA: ' . $news3_cta;
+// echo '<br>NEWS 3 URL: ' . $news3_url;
+
+
+
+?>
+
+<!-- ********************************************** -->
+<!--                                                -->
+<!-- HEADER                                         -->
+<!--                                                -->
+<!-- ********************************************** -->
+
+
+<?php get_header(); ?>
+
+<div class="page-home">
+    <?php //DEBUG stylesheet
+	// echo get_template_directory_uri() . '/home2017.css';
+?>
+
+    <!-- ********************************************** -->
+    <!--                                                -->
+    <!-- HERO BANNER                                    -->
+    <!--                                                -->
+    <!-- ********************************************** -->
+    <div id="hero-section" style="background-image: url('<?php echo $hero_image; ?>')">
+        <div id="hero-overlay">
+            <div id="hero-content-wrap">
+                <?php if ($hero_header != ''): ?>
+                <div id="hero-title" class="hero-title">
+                    <h2><?php echo $hero_header; ?></h2>
+                </div>
+                <?php endif; ?>
+                <?php if ($hero_cta != ''): ?>
+                <div id="hero-cta">
+                    <a href="<?php echo $hero_url;?>">
+                        <div id="hero-cta-button" class="cta-button hero-cta-button">
+                            <?php echo $hero_cta;?> &rsaquo;
+                        </div>
+                    </a>
+                </div>
+                <?php endif; ?>
+            </div><!--  /hero-content-wrap-->
+        </div> <!-- /overlay -->
+    </div> <!-- /hero-section -->
+
+
+
+
+    <!-- ********************************************** -->
+    <!--                                                -->
+    <!--  TESTIMONIAL                                   -->
+    <!--                                                -->
+    <!-- ********************************************** -->
+    <?php
+		// get testimonial
+		$hero = get_posts(array(
+
+	'post_type'=>'testimonial',
+    //	'posts_per_page'=>$post_number,
+    'numberposts' => 1, // get all
+    'orderby' => 'rand',
+    /*
+    'tax_query' => array(
+    array(
+    'taxonomy' => 'testimonial-categories',
+    'field' => 'slug',
+    'terms' => 'hero' // Where term_id of Term 1 is "1".
+    )
+
+    )
+    */
+    )
+    );
+
+    // Reset query
+    wp_reset_query();
+
+    $hero_id = $hero[0]->ID;
+
+    ?>
+
+
+    <div id="testimonial-section">
+        <dic class="inner-container">
+            <div id="testimonial-container" class="inner-container">
+                <div class="testimonial-left">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         width="116.483px" height="85.489px" viewBox="0 0 116.483 85.489" enable-background="new 0 0 116.483 85.489"
+                         xml:space="preserve">
+					<path id="openquote" d="M54.164,60.351c0,2.916-0.557,5.694-1.666,8.33c-1.113,2.639-2.639,4.965-4.582,6.977c-1.946,2.014-4.236,3.576-6.872,4.686
+						c-2.639,1.113-5.486,1.666-8.538,1.666c-6.664,0-12.115-2.219-16.348-6.664c-4.237-4.442-6.352-10.272-6.352-17.493
+						c0-5.691,0.761-11.174,2.291-16.452c1.526-5.274,3.608-10.308,6.248-15.098c2.636-4.79,5.727-9.299,9.267-13.536
+						C31.152,8.533,34.934,4.612,38.962,1l9.788,9.788c-4.445,4.445-8.226,9.095-11.35,13.953c-3.124,4.861-5.31,9.928-6.56,15.203
+						c4.025,0,7.529,0.592,10.517,1.77c2.983,1.181,5.414,2.707,7.289,4.582c1.874,1.874,3.26,4.061,4.165,6.56
+						C53.712,55.353,54.164,57.852,54.164,60.351z M111.305,60.351c0,2.916-0.556,5.694-1.666,8.33c-1.112,2.639-2.639,4.965-4.581,6.977
+						c-1.946,2.014-4.269,3.576-6.977,4.686c-2.707,1.113-5.59,1.666-8.642,1.666c-6.664,0-12.079-2.219-16.244-6.664
+						c-4.165-4.442-6.248-10.272-6.248-17.493c0-5.691,0.729-11.174,2.187-16.452c1.458-5.274,3.504-10.308,6.144-15.098
+						c2.636-4.79,5.727-9.299,9.267-13.536C88.085,8.533,91.866,4.612,95.895,1l9.788,9.788c-4.445,4.445-8.226,9.095-11.35,13.953
+						c-3.124,4.861-5.31,9.928-6.56,15.203c4.025,0,7.529,0.592,10.517,1.77c2.984,1.181,5.447,2.707,7.393,4.582
+						c1.942,1.874,3.364,4.061,4.269,6.56C110.853,55.353,111.305,57.852,111.305,60.351z"/>
+					</svg>
+
+
+                </div>
+                <div class="testimonial-center">
+                    <div class="testimonial-text-container">
+                        <div class="testimonial-text">
+                            <?php echo wp_strip_all_tags(get_post_field('post_content', $hero_id)); ?></div>
+                        <div class="testimonial-attributed"><span class="testimonial-attributed-name"><?php echo wp_strip_all_tags(get_post_field('post_title', $hero_id)); ?></span>
+                            <?php if ( get_post_meta($hero_id, 'testimonial-course', true) != '' || get_post_meta($hero_id, 'testimonial-location', true) != ''): ?>
+                            <br>
+                            <span class="testinomial-attributed-role">
+							<?php echo get_post_meta($hero_id, 'testimonial-course', true); ?>
+                                <?php if ( get_post_meta($hero_id, 'testimonial-course', true) != '' && get_post_meta($hero_id, 'testimonial-location', true) != ''): ?>,
+                                <?php endif; ?>
+                                <?php echo get_post_meta($hero_id, 'testimonial-location', true); ?></span>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-right">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         width="116.483px" height="85.489px" viewBox="0 0 116.483 85.489" enable-background="new 0 0 116.483 85.489"
+                         xml:space="preserve">
+				<path id="closequote" d="M66.948,22.658c0-2.916,0.557-5.694,1.666-8.33c1.113-2.639,2.639-4.965,4.582-6.977c1.946-2.014,4.236-3.576,6.872-4.686
+					C82.707,1.553,85.554,1,88.605,1c6.664,0,12.115,2.219,16.348,6.664c4.237,4.442,6.352,10.272,6.352,17.493
+					c0,5.691-0.761,11.174-2.291,16.452c-1.526,5.274-3.608,10.308-6.248,15.098c-2.636,4.79-5.727,9.299-9.267,13.536
+					c-3.54,4.233-7.321,8.154-11.35,11.766l-9.788-9.788c4.445-4.445,8.226-9.095,11.35-13.953c3.124-4.861,5.31-9.928,6.56-15.203
+					c-4.025,0-7.529-0.592-10.517-1.77c-2.983-1.181-5.414-2.707-7.289-4.582c-1.874-1.874-3.26-4.061-4.165-6.56
+					C67.4,27.656,66.948,25.157,66.948,22.658z M9.807,22.658c0-2.916,0.556-5.694,1.666-8.33c1.112-2.639,2.639-4.965,4.581-6.977
+					C18,5.337,20.323,3.776,23.031,2.666C25.738,1.553,28.621,1,31.673,1c6.664,0,12.079,2.219,16.244,6.664
+					c4.165,4.442,6.248,10.272,6.248,17.493c0,5.691-0.729,11.174-2.187,16.452c-1.458,5.274-3.504,10.308-6.144,15.098
+					c-2.636,4.79-5.727,9.299-9.267,13.536c-3.54,4.233-7.321,8.154-11.35,11.766l-9.788-9.788c4.445-4.445,8.226-9.095,11.35-13.953
+					c3.124-4.861,5.31-9.928,6.56-15.203c-4.025,0-7.529-0.592-10.517-1.77c-2.984-1.181-5.447-2.707-7.393-4.582
+					c-1.942-1.874-3.364-4.061-4.269-6.56C10.259,27.656,9.807,25.157,9.807,22.658z"/>
+				</svg>
+
+                </div>
+
+            </div>
+    </div><!-- /.inner-container -->
+
+</div> <!-- /testimonial-section -->
+
+</div> <!-- /overlay -->
+</div> <!-- /hero-section -->
+
+<!-- ********************************************** -->
+<!--                                                -->
+<!-- TOP BLUE STRIPE                                -->
+<!--                                                -->
+<!-- ********************************************** -->
+
+<div class="blue-stripe">
 </div>
 
-<a name="top"></a>
-<div class="subnav-menu-col">
-    <ul class="subnav-menu-items">
-        <li><a href="/leadership-resources-and-references#budgeting-and-accounting">BUDGETING AND ACCOUNTING</a></li>
-        <li><a href="/leadership-resources-and-references#career-paths">CAREER PATHS</a></li>
-        <li><a href="/leadership-resources-and-references#community-of-practice">COMMUNITY OF PRACTICE</a></li>
-        <li><a href="/leadership-resources-and-references#csm">CSM</a></li>
-        <li><a href="/leadership-resources-and-references#culture">CULTURE</a></li>
-        <li><a href="/leadership-resources-and-references#estimation">ESTIMATION AND FORECASTING</a></li>
-        <li><a href="/leadership-resources-and-references#failure-modes">FAILURE MODES</a></li>
-        <li><a href="/leadership-resources-and-references#finance">FINANCE</a></li>
-        <li><a href="/leadership-resources-and-references#general-leadership">GENERAL LEADERSHIP</a></li>
-        <li><a href="/leadership-resources-and-references#hiring">HIRING</a></li>
-        <li><a href="/leadership-resources-and-references#managers-in-scrum">MANAGERS IN SCRUM</a></li>
-        <li><a href="/leadership-resources-and-references#metrics-and-measurement">METRICS AND MEASUREMENT</a></li>
-        <li><a href="/leadership-resources-and-references#ongoing-organizational-improvement">ONGOING ORGANIZATIONAL IMPROVEMENT</a></li>
-        <li><a href="/leadership-resources-and-references#open-offices">OPEN OFFICES</a></li>
-        <li><a href="/leadership-resources-and-references#pay-for-performance">PAY FOR PERFORMANCE</a></li>
-        <li><a href="/leadership-resources-and-references#performance-management">PERFORMANCE MANAGEMENT</a></li>
-        <li><a href="/leadership-resources-and-references#reporting">REPORTING</a></li>
-        <li><a href="/leadership-resources-and-references#tours-of-agile-companies">TOURS OF AGILE COMPANIES</a></li>
-        <li><a href="/leadership-resources-and-references#transformation-and-transitions">TRANSFORMATION AND TRANSITIONS</a></li>
+
+<!-- ********************************************** -->
+<!--                                                -->
+<!-- SPECIAL COVID MESSAGE                          -->
+<!--                                                -->
+<!-- ********************************************** -->
+
+<div style="border: 3px solid red; padding: 20px; font-weight: bold; font-size: 1.1em; margin: 20px auto; max-width: 1000px;">
+    <span style="color: red;">Compensating for COVID-19 Impact:</span> <span style="color: green;">VIRTUAL SCRUM TRAINING</span>
+    <div>In response to the current pandemic, Scrum Alliance&reg; has temporarily authorized us to deliver Certified Scrum training virtually to protect attendees if needed.</div>
+    <ul style="margin-top: 8px;">
+        <li>Virtual workshop attendees may attend a future in-person workshop for the same course at no extra cost.</li>
+        <li>April workshops will be virtual.</li>
+        <li>May/June workshops will be virtual if needed.</li>
     </ul>
+    <div>As decisions and details become available, they will be shared directly with course registrants.</div>
+    <div style="margin-top: 8px;">QUESTIONS? CONCERNS? Email <a href='mailto:contact@agilepainrelief.com'>contact@agilepainrelief.com</a></div>
 </div>
-<a name="budgeting-and-accounting"></a>
-<h4 class="resource-term-header">Budgeting and Accounting <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="https://www.leadingagile.com/2018/01/accounting-for-internal-use-software/">Accounting for Internal Use Software</a></div>
-    <div class="resource-post-link"><a href="http://www.slideshare.net/beyondbudgetingnet/en-beyond-budgeting-case-study-favi-france">Beyond Budgeting Case Study – Favi</a></div>
-    <div class="resource-post-link"><a href="https://leankit.com/blog/2017/01/lean-accounting-time-tracking/">Lean Accounting: Does IT Need a Time Out on Time Tracking?</a></div>
-    <div class="resource-post-link"><a href="https://hbr.org/2014/12/your-agile-project-needs-a-budget-not-an-estimate">Your Agile Project Needs a Budget, Not an Estimate</a></div>
-</div>
-<h4 class="resource-term-header"><a name="csm"></a></h4>
-<h4 class="resource-term-header">CSM <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="/blog/bell-curves-and-measuring-badly.html">Bell Curves and Measuring Badly</a></div>
-</div>
-<h4 class="resource-term-header"><a name="career-paths"></a></h4>
-<h4 class="resource-term-header">Career Paths <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="https://www.infoq.com/articles/agile-career-framework">An Agile Talent Development and Adaptive Career Framework</a></div>
-</div>
-<h4 class="resource-term-header"><a name="community-of-practice"></a></h4>
-<h4 class="resource-term-header">Community of Practice <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="https://www.infoq.com/articles/communities-of-practice-agile-organisation">Communities of Practice: The Missing Piece of Your Agile Organisation</a></div>
-</div>
-<h4 class="resource-term-header"><a name="culture"></a></h4>
-<h4 class="resource-term-header">Culture <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="https://www.linkedin.com/pulse/spotify-model-10-lessons-transplantology-kate-terlecka/">“Spotify Model” – 10 lessons in transplantology</a></div>
-    <div class="resource-post-link"><a href="https://hbr.org/2017/06/5-questions-to-ask-about-corporate-culture-to-get-beyond-the-usual-meaningless-blather">5 Questions to Ask About Corporate Culture to Get Beyond the Usual Meaningless Blather</a></div>
-    <div class="resource-post-link"><a href="https://www.infoq.com/news/2016/10/no-spotify-model">Don’t Copy the Spotify Model</a></div>
-    <div class="resource-post-link"><a href="http://bps-occupational-digest.blogspot.ca/2012/11/driven-away-by-hypocrisy-when-endorsing.html">Driven away by hypocrisy: when endorsing a caring workplace backfires for leaders</a></div>
-    <div class="resource-post-link"><a href="http://blogs.hbr.org/schwartz/2012/11/creating-sustainable-employee.html">HBR How Employee Engagement Hits the Bottom Line</a></div>
-    <div class="resource-post-link"><a href="http://blogs.hbr.org/cs/2012/07/how_damaging_is_a_bad_boss_exa.html">How Damaging Is a Bad Boss, Exactly? – Jack Zenger and Joseph Folkman</a></div>
-    <div class="resource-post-link"><a href="http://hbr.org/2011/04/strategies-for-learning-from-failure/ar/pr">Strategies for Learning from Failure – Amy C. Edmondson</a></div>
-</div>
-<h4 class="resource-term-header"><a name="failure-modes"></a></h4>
-<h4 class="resource-term-header">Failure Modes <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="https://www.ca.com/content/dam/ca/us/files/ebook/recognizing-the-twelve-failure-modes-in-agile-transformation.pdf">12 Failure Modes in Agile Transformation <span class="tiny-nav">[PDF warning!]</span></a></div>
-    <div class="resource-post-link"><a href="https://www.computer.org/csdl/proceedings-article/2008/hicss/12OmNy3iFtz/12OmNxuXcwb">Rolling Out Agile in a Large Enterprise</a></div>
-    <div class="resource-post-link"><a href="https://www.thoughtworks.com/insights/blog/seven-pitfalls-avoid-during-organizational-transformation">Seven Pitfalls to Avoid During Organizational Transformation</a></div>
-    <div class="resource-post-link"><a href="http://www.forbes.com/sites/stevedenning/2011/04/18/six-common-mistakes-that-salesforce-com-didnt-make/">Six Common Mistakes That Salesforce.com Didn’t Make</a></div>
-    <div class="resource-post-link"><a href="http://stateofagile.versionone.com/">State of Agile Report</a></div>
-</div>
-<h4 class="resource-term-header"><a name="finance"></a></h4>
-<h4 class="resource-term-header">Finance <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="https://open.buffer.com/buying-out-investors/amp/">We Spent $3.3M Buying Out Investors: Why and How We Did It</a></div>
-    <div class="resource-post-link"><a href="http://www.infoq.com/articles/agile-capitalization">Why Should Agilists Care About Capitalization?</a></div>
-</div>
-<h4 class="resource-term-header"><a name="general-leadership"></a></h4>
-<h4 class="resource-term-header">General Leadership <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="http://leadinganswers.typepad.com/leading_answers/2015/10/agile-talent-management.html">Agile Talent Management</a></div>
-    <div class="resource-post-link"><a href="http://www.mckinsey.com/business-functions/business-technology/our-insights/an-operating-model-for-company-wide-agile-development">An operating model for company-wide agile development</a></div>
-    <div class="resource-post-link"><a href="https://theitriskmanager.wordpress.com/2017/04/01/executives-and-safety/">Executives and Safety – “Get it done” Individuals</a></div>
-    <div class="resource-post-link"><a href="https://hbr.org/2017/08/good-leaders-are-good-learners">Good Leaders Are Good Learners</a></div>
-    <div class="resource-post-link"><a href="http://maaw.info/ArticleSummaries/ArtSumHerzberg6803.htm">How do you motivate employees? – Summary of Herzberg theory</a></div>
-    <div class="resource-post-link"><a href="http://qaspire.com/2016/07/18/leadership-and-the-art-of-effective-listening/">Leadership and The Art of Effective Listening</a></div>
-    <div class="resource-post-link"><a href="http://blog.crisp.se/2015/11/10/henrikkniberg/what-is-an-agile-leader">What is an Agile Leader?</a></div>
-</div>
-<h5 class="resource-book-category parent">GENERAL LEADERSHIP BOOKS</h5>
-<div class="resource-book-link parent"><a href="https://www.amazon.ca/Quiet-Leadership-Steps-Transforming-Performance/dp/0060835915/&amp;tag=notesfromatoo-20/&amp;tag=notesfromatoo-20">Quiet Leadership: Six Steps to Transforming Performance at Work</a> - David Rock<span class="tiny-nav"> [AMAZON]</span></div>
-<div class="resource-book-link parent"><a href="https://www.amazon.ca/Leaders-Guide-Radical-Management-Reinventing/dp/0470548681/&amp;tag=notesfromatoo-20/&amp;tag=notesfromatoo-20">The Leader’s Guide to Radical Management: Reinventing the Workplace for the 21st Century</a> - Steve Denning<span class="tiny-nav"> [AMAZON]</span></div>
-<div class="resource-book-link parent"><a href="https://www.amazon.ca/Motivating-People-Doesnt-Work-What/dp/1626561826/&amp;tag=notesfromatoo-20/&amp;tag=notesfromatoo-20">Why Motivating People Doesn’t Work . . . and What Does: The New Science of Leading, Energizing, and Engaging</a> - Susan Fowler<span class="tiny-nav"> [AMAZON]</span></div>
-<h4 class="resource-term-header"><a name="hiring"></a></h4>
-<h4 class="resource-term-header">Hiring <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="http://deliberate-software.com/on-defeat/">Interview Humiliation</a></div>
-    <div class="resource-post-link"><a href="https://hbr.org/2014/08/the-problem-with-using-personality-tests-for-hiring">The Problem with Using Personality Tests for Hiring</a></div>
-</div>
-<h4 class="resource-term-header"><a name="managers-in-scrum"></a></h4>
-<h4 class="resource-term-header">Managers in Scrum <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="http://www.agileforall.com/2012/11/functional-managers-in-agile/">Functional Managers in Agile</a></div>
-    <div class="resource-post-link"><a href="http://www.scruminc.com/leading-versus-managing-in-scrum-2/">Leading vs. Managing in a Scrum Environment</a></div>
-    <div class="resource-post-link"><a href="http://leadinganswers.typepad.com/leading_answers/2012/10/linking-agile-to-hr-theory.html">Linking Agile to HR</a></div>
-    <div class="resource-post-link"><a href="http://stevedenning.typepad.com/">Reinventing Management – Steve Denning</a></div>
-    <div class="resource-post-link"><a href="https://less.works/less/management/role-of-manager.html">Role of Manager</a></div>
-    <div class="resource-post-link"><a href="https://7oas7er.wordpress.com/2014/01/16/scaling-the-happiness-index/">Scaling The Happiness Index</a></div>
-    <div class="resource-post-link"><a href="http://www.infoq.com/articles/scrum-management-deemer">The Role of The Manager in Scrum</a></div>
-    <div class="resource-post-link"><a href="https://www.estherderby.com/what-do-middle-managers-do/">What do Middle Managers Do in Agile</a></div>
-    <div class="resource-post-link"><a href="https://www.infoq.com/articles/joyinc-project-management">What Makes Joy,Inc Work? Disciplined Project Management</a></div>
-    <div class="resource-post-link"><a href="http://www.agilecoachjournal.com/index.php/2011-02-06/scrum/where-does-a-project-manager-fit-in-scrum-part-2/">Where Does a Project Manager Fit in Scrum – Part 1</a></div>
-    <div class="resource-post-link"><a href="http://www.agilecoachjournal.com/index.php/2011-01-30/scrum/where-does-a-project-manager-fit-in-scrum-part-1/">Where Does a Project Manager Fit in Scrum – Part 1 – includes an exercise you can play with your team</a></div>
-</div>
-<h5 class="resource-book-category parent">MANAGERS IN SCRUM BOOKS</h5>
-<div class="resource-book-link parent"><a href="http://www.amazon.com/Leaders-Guide-Radical-Management-Reinventing/dp/0470548681/&amp;tag=notesfromatoo-20/&amp;tag=notesfromatoo-20">The Leader’s Guide to Radical Management: Reinventing the Workplace for the 21st Century</a> - Stephen Denning<span class="tiny-nav"> [AMAZON]</span></div>
-<h4 class="resource-term-header"><a name="metrics-and-measurement"></a></h4>
-<h4 class="resource-term-header">Metrics and Measurement <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="https://www.frontrowagile.com/blog/posts/69-30-metrics-for-agile-software-development-teams">30+ Metrics for Agile Software Development Teams</a></div>
-    <div class="resource-post-link"><a href="http://www.keystepstosuccess.com/2017/10/addressing-problems-caused-by-amms/">Addressing Problems Caused by AMMs</a></div>
-    <div class="resource-post-link"><a href="http://dhondtsayitsagile.blogspot.ca/2012/10/agile-metrics.html">Agile Metrics</a></div>
-    <div class="resource-post-link"><a href="https://dzone.com/articles/agile-metricsthe-good-the-bad-and-the-ugly">Agile Metrics: The Good, the Bad, and the Ugly</a></div>
-    <div class="resource-post-link"><a href="http://blog.agilistic.nl/agile-teams-dont-use-happiness-metrics-measure-team-morale/">Agile Teams: Don’t use happiness metrics, measure Team Morale</a></div>
-    <div class="resource-post-link"><a href="http://martinfowler.com/articles/useOfMetrics.html">An Appropriate Use of Metrics</a></div>
-    <div class="resource-post-link"><a href="http://thinkpurpose.com/2014/05/21/why-scorecards-are-as-dangerous-as-michael-jacksons-personal-doctor/">Be careful how often you measure</a></div>
-    <div class="resource-post-link"><a href="/blog/bell-curves-and-measuring-badly.html">Bell Curves and Measuring Badly</a></div>
-    <div class="resource-post-link"><a href="https://sites.google.com/a/scrumplop.org/published-patterns/product-organization-pattern-language/pop-the-happy-bubble">Beyond the Happy Bubble</a></div>
-    <div class="resource-post-link"><a href="https://agilecomplexificationinverter.blogspot.ca/2016/12/cycle-time-and-lead-time.html">Cycle Time and Lead Time</a></div>
-    <div class="resource-post-link"><a href="http://www.slideshare.net/FocusedObjective/data-driven-coaching-agile-2016-troy-magennis">Data driven coaching – Agile 2016</a></div>
-    <div class="resource-post-link"><a href="https://www.slideshare.net/FocusedObjective/data-driven-coaching-agile-2016-troy-magennis">Data driven coaching – Agile 2016 slideshare</a></div>
-    <div class="resource-post-link"><a href="https://github.com/FocusedObjective/FocusedObjective.Resources/blob/master/Presentations/Agile%202015%20-%20Entangled%20-%20Solving%20the%20Hairy%20Problem%20of%20Team%20Dependencies%20(Troy%20Magennis).pdf">Entangled – Solving the Hairy Problem of Team Dependencies <span class="tiny-nav">[PDF warning!]</span></a></div>
-    <div class="resource-post-link"><a href="https://www.scruminc.com/happiness-metric-wave-of-future-2/">Happiness Metric – The Wave of the Future</a></div>
-    <div class="resource-post-link"><a href="http://timkastelle.org/blog/2010/03/how-accountants-kill-innovation">How Accountants Kill Innovation</a></div>
-    <div class="resource-post-link"><a href="http://firstround.com/review/im-sorry-but-those-are-vanity-metrics/">I’m Sorry, But Those Are Vanity Metrics</a></div>
-    <div class="resource-post-link"><a href="http://www.mintzberg.org/blog/measure-it-manage-it">If You Can’t Measure It, You’d Better Manage It</a></div>
-    <div class="resource-post-link"><a href="https://hbr.org/2017/05/linear-thinking-in-a-nonlinear-world">Linear Thinking in a Nonlinear World</a></div>
-    <div class="resource-post-link"><a href="https://www.slideshare.net/kenpower/what-prevents-work-from-flowing-smoothly-making-sense-of-organization-impediments">Making sense of organization impediments</a></div>
-    <div class="resource-post-link"><a href="/blog/measurement-for-scrum-what-are-appropriate-measures.html">Measurement for Scrum – What are Appropriate Measures?</a></div>
-    <div class="resource-post-link"><a href="https://en.innova1st.com/2017/05/05/midiendo-y-evaluando-scrum-en-entornos-complejos-incluye-archivos-de-ejemplo-y-para-que-utilices/">Measuring and evaluating Scrum in complex environments</a></div>
-    <div class="resource-post-link"><a href="http://blog.crisp.se/2010/05/08/henrikkniberg/what-is-crisp">Measuring Happiness on the Team: What is Crisp?</a></div>
-    <div class="resource-post-link"><a href="http://www.innolution.com/blog/team-performance-measures">Measuring Team Performance</a></div>
-    <div class="resource-post-link"><a href="http://focusedobjective.com/metrics-dont-evil/">Metrics don’t have to be evil</a></div>
-    <div class="resource-post-link"><a href="http://focusedobjective.com/metrics-dont-evil/">Metrics don’t have to be evil – 5 traps and tips</a></div>
-    <div class="resource-post-link"><a href="http://www.estherderby.com/2011/10/metrics-for-agile.html">Metrics for Agile</a></div>
-    <div class="resource-post-link"><a href="https://www.researchgate.net/publication/326347254_Metrics_for_Understanding_Flow">Metrics for Understanding Flow</a></div>
-    <div class="resource-post-link"><a href="https://dannorth.net/2018/09/04/monte-python-simulation/">Monte Python Simulation: Misunderstanding Monte Carlo</a></div>
-    <div class="resource-post-link"><a href="http://martinfowler.com/articles/useOfMetrics.html">Patrick Kau – on the Appropriate Use of Metrics</a></div>
-    <div class="resource-post-link"><a href="/blog/red-yellow-green-or-rygrag-reports-how-they-hide-the-truth.html">Red, Yellow, Green or RYG/RAG Reports: How They Hide the Truth</a></div>
-    <div class="resource-post-link"><a href="https://sites.google.com/a/scrumplop.org/published-patterns/retrospective-pattern-language/scrumming-the-scrum">Scrumming the Scrum (the use of happiness as a Metric in Retrospectives)</a></div>
-    <div class="resource-post-link"><a href="/blog/simplicity.html">Simplicity</a></div>
-    <div class="resource-post-link"><a href="https://agilecomplexificationinverter.blogspot.ca/2016/06/team-metrics-case-study.html">Team Metrics – Case Study</a></div>
-    <div class="resource-post-link"><a href="http://testobsessed.com/2010/12/the-agile-acid-test/">The Agile Acid Test</a></div>
-    <div class="resource-post-link"><a href="http://blog.crisp.se/2011/10/19/anderslaestadius/the-happiness-metric-and-a-few-others">The Happiness metric and a few others</a></div>
-    <div class="resource-post-link"><a href="https://ideas.riverglide.com/the-one-formula-for-metrics-f413566eaa23">The One Formula for Metrics</a></div>
-    <div class="resource-post-link"><a href="http://fourhourworkweek.com/2009/05/19/vanity-metrics-vs-actionable-metrics/">Vanity Metrics vs. Actionable Metrics</a></div>
-    <div class="resource-post-link"><a href="http://leankit.com/blog/2016/03/why-vanity-metrics-are-dangerous-holding-a-mirror-up-to-your-measures-of-success/">Why Vanity Metrics are Dangerous: Holding a Mirror Up to Your Measures of Success</a></div>
-</div>
-<h5 class="resource-child-term-header">FORECASTING TOOLS</h5>
-<div class="resource-child-link">
-    <div class="resource-post-link"><a href="https://github.com/FocusedObjective/FocusedObjective.Resources/tree/master/Spreadsheets">Focused Objective – Collection of Forecasting Tools</a></div>
-    <div class="resource-post-link"><a href="https://github.com/FocusedObjective/FocusedObjective.Resources/blob/master/Common%20Questions%20Anwered.pdf">Forecasting Using Data – Common Questions Answered <span class="tiny-nav">[PDF warning!]</span></a></div>
-</div>
-<h4 class="resource-term-header"><a name="ongoing-organizational-improvement"></a></h4>
-<h4 class="resource-term-header">Ongoing Organizational Improvement <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="https://gravitypayments.com/thegravityof70k/#infographic-1">The Gravity of $70K: What Actually Happened at Gravity Payments</a></div>
-</div>
-<h5 class="resource-child-term-header">IMPROVEMENT STORIES</h5>
-<div class="resource-child-link">
-    <div class="resource-post-link"><a href="https://www.innovel.net/improve-measurably-with-improvement-stories/">Improve Measurably with Improvement Stories</a></div>
-    <div class="resource-post-link"><a href="https://gravitypayments.com/thegravityof70k/#infographic-1">The Gravity of $70K: What Actually Happened at Gravity Payments</a></div>
-</div>
-<h4 class="resource-term-header"><a name="open-offices"></a></h4>
-<h4 class="resource-term-header">Open Offices <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="http://www.spring.org.uk/2013/09/6-psych-tips-for-creating-the-ideal-workspace.php">6 Psych Tips For Creating The Ideal Workspace</a></div>
-    <div class="resource-post-link"><a href="https://www.washingtonpost.com/posteverything/wp/2014/12/30/google-got-it-wrong-the-open-office-trend-is-destroying-the-workplace/">Google got it wrong. The open-office trend is destroying the workplace.</a></div>
-    <div class="resource-post-link"><a href="https://royalsocietypublishing.org/doi/full/10.1098/rstb.2017.0239">Privacy and Communication in an Open-Plan Office A Case Study</a></div>
-    <div class="resource-post-link"><a href="https://royalsocietypublishing.org/doi/full/10.1098/rstb.2017.0239">The impact of the ‘open’ workspace on human collaboration</a></div>
-    <div class="resource-post-link"><a href="http://www.newyorker.com/business/currency/the-open-office-trap">The Open-Office Trap</a></div>
-    <div class="resource-post-link"><a href="http://bps-research-digest.blogspot.ca/2013/08/the-supposed-benefits-of-open-plan.html">The supposed benefits of open-plan offices do not outweigh the costs</a></div>
-    <div class="resource-post-link"><a href="http://www.businessinsider.com/why-the-open-office-makes-you-distracted-exhausted-and-insecure-2014-4">Why The Open Office Makes You Distracted, Exhausted, And Insecure</a></div>
-    <div class="resource-post-link"><a href="http://www.sciencedirect.com/science/article/pii/S0272494413000340">Workspace satisfaction: The privacy-communication trade-off in open-plan offices</a></div>
-</div>
-<h4 class="resource-term-header"><a name="pay-for-performance"></a></h4>
-<h4 class="resource-term-header">Pay for Performance <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="http://danariely.com/2012/10/06/3668/">Bogus Bonuses and C.E.O. Salaries – Dan Ariely</a></div>
-</div>
-<h5 class="resource-child-term-header">PROSOCIAL BONUSES</h5>
-<div class="resource-child-link">
-    <div class="resource-post-link"><a href="http://www.hbs.edu/faculty/Pages/item.aspx?num=44800">Prosocial Bonuses Increase Employee Satisfaction and Team Performance</a></div>
-    <div class="resource-post-link"><a href="http://www.bloomberg.com/bw/articles/2013-05-15/the-best-bonus-is-one-you-cant-spend-on-yourself">The Best Bonus Is One You Can’t Spend on Yourself</a></div>
-</div>
-<h4 class="resource-term-header"><a name="performance-management"></a></h4>
-<h4 class="resource-term-header">Performance Management <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="http://randsinrepose.com/archives/a-performance-question/">A Performance Question</a></div>
-    <div class="resource-post-link"><a href="http://agileotter.blogspot.ca/2015/07/a-quick-rundown-on-performance.html">A Quick Rundown on Performance Reviews</a></div>
-    <div class="resource-post-link"><a href="http://www.washingtonpost.com/blogs/on-leadership/wp/2015/07/21/in-big-move-accenture-will-get-rid-of-annual-performance-reviews-and-rankings/">Accenture will get rid of annual performance reviews and rankings</a></div>
-    <div class="resource-post-link"><a href="http://blog.protegra.com/2013/01/04/a-systems-thinking-alternative-to-performance-reviews/">An Alternative to Performance Reviews</a></div>
-    <div class="resource-post-link"><a href="https://neuroleadership.com/portfolio-items/pm-report-removing-ratings/">Case Study: What Really Happens When Companies Remove Ratings</a></div>
-    <div class="resource-post-link"><a href="https://www.thecut.com/2015/06/time-to-revamp-the-performance-review.html">It’s Time to Kill the Performance Review</a></div>
-    <div class="resource-post-link"><a href="http://microsoft-news.com/microsoft-abolishes-stack-ranking-system-employee-evaluation-process/">Microsoft Drops Stack Ranking</a></div>
-    <div class="resource-post-link"><a href="https://labs.spotify.com/2013/11/21/personal-development-at-spotify/">Personal development at Spotify</a></div>
-    <div class="resource-post-link"><a href="http://www.keystepstosuccess.com/2016/02/quotes-from-get-rid-of-the-performance-review-how-companies-can-stop-intimidating-start-managing-and-focus-on-what-really-matters-by-culbert-samuel-a-laurence-rout/">Quotes from “Get Rid of the Performance Review!”</a></div>
-    <div class="resource-post-link"><a href="http://www.vanityfair.com/news/2012/07/microsoft-downfall-emails-steve-ballmer">Stack Ranking and the damage done at Microsoft</a></div>
-    <div class="resource-post-link"><a href="http://www.washingtonpost.com/national/on-leadership/the-corporate-kabuki-of-performance-reviews/2013/02/14/59b60e86-7624-11e2-aa12-e6cf1d31106b_story.html">The corporate kabuki of performance reviews</a></div>
-    <div class="resource-post-link"><a href="https://www.linkedin.com/pulse/truth-performance-reviews-other-corporate-bullsht-liz-ryan">The Truth about Performance Reviews and Other Corporate Bullsh*t</a></div>
-    <div class="resource-post-link"><a href="http://www.tocinstitute.org/theory-of-constraints.html">Theory of Constraints (TOC)</a></div>
-    <div class="resource-post-link"><a href="https://neuroleadership.com/portfolio-items/pm-report-removing-ratings/">What Really Happens When Companies Remove Ratings (Case Study)</a></div>
-    <div class="resource-post-link"><a href="https://qz.com/428813/ge-performance-review-strategy-shift/">Why GE had to kill its annual performance reviews after more than three decades</a></div>
-    <div class="resource-post-link"><a href="https://hbr.org/2015/09/why-more-and-more-companies-are-ditching-performance-ratings">Why More and More Companies Are Ditching Performance Ratings</a></div>
-</div>
-<h5 class="resource-book-category parent">PERFORMANCE MANAGEMENT BOOKS</h5>
-<div class="resource-book-link parent"><a href="https://www.amazon.ca/Goal-Process-Ongoing-Improvement/dp/0884271951/&amp;tag=notesfromatoo-20/&amp;tag=notesfromatoo-20">The Goal: A Process of Ongoing Improvement</a> - Eliyahu M Goldratt, Jeff Cox, David Whitford<span class="tiny-nav"> [AMAZON]</span></div>
-<div class="resource-book-link parent"><a href="https://www.amazon.ca/Abolishing-Performance-Appraisals-Backfire-Instead/dp/1576752003/&amp;tag=notesfromatoo-20/&amp;tag=notesfromatoo-20">Abolishing Performance Appraisals: Why They Backfire and What to Do Instead</a> - Tom Coens, Mary Jenkins<span class="tiny-nav"> [AMAZON]</span></div>
-<h4 class="resource-term-header"><a name="reporting"></a></h4>
-<h4 class="resource-term-header">Reporting <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="https://ieeexplore.ieee.org/document/1667558/">AgileEVM – Earned Value Management in Scrum Projects</a></div>
-    <div class="resource-post-link"><a href="https://www.infoq.com/articles/agile-evm">AgileEVM: Measuring Cost Efficiency Across the Product Lifecycle</a></div>
-</div>
-<h4 class="resource-term-header"><a name="tours-of-agile-companies"></a></h4>
-<h4 class="resource-term-header">Tours of Agile Companies <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="https://www.youtube.com/watch?v=OuheSYveeX4">Marc P Summers visit to the Infusionsoft Headquarters 2013</a></div>
-</div>
-<h4 class="resource-term-header"><a name="transformation-and-transitions"></a></h4>
-<h4 class="resource-term-header">Transformation and Transitions <span class="tiny-nav"><a href="/leadership-resources-and-references#top">[TOP]</a></span></h4>
-<div class="resource-post-link-block">
-    <div class="resource-post-link"><a href="http://radianttiger.com/2015/04/20/a-culture-that-attracts-quality-candidates/">A culture that attracts quality candidates</a></div>
-    <div class="resource-post-link"><a href="https://www.infoq.com/news/2018/02/agile-transformation-kpn-itv">Agile Transformation at KPN iTV</a></div>
-    <div class="resource-post-link"><a href="https://mike-bland.com/2012/07/10/test-mercenaries.html">How Google changed a Development Culture from avoiding Test in Development to embracing it and test automation</a></div>
-    <div class="resource-post-link"><a href="https://gorgias.io/blog/small-engineering-team-as-a-competitive-advantage">Small engineering team as a competitive advantage</a></div>
-    <div class="resource-post-link"><a href="https://www.linkedin.com/pulse/attraction-classic-hierarchies-kurt-nielsen/">The Attraction of Classic Hierarchies</a></div>
-    <div class="resource-post-link"><a href="https://www.fedscoop.com/defense-innovation-board-wants-help-military-recognize-agile-bs/">The Defense Innovation Board wants to help the military recognize ‘agile BS’</a></div>
-    <div class="resource-post-link"><a href="https://salfreudenberg.wordpress.com/2014/03/21/three-organisational-transformation-modes/">Three Organisational Transformation Modes</a></div>
-    <div class="resource-post-link"><a href="http://www.mintzberg.org/blog/transformation-from-the-top-how-about-engagement-on-the-ground">Transformation from the top? How about engagement on the ground?</a></div>
-    <div class="resource-post-link"><a href="http://www.infoq.com/articles/managers-support-agile-transformation">What Managers Can Do To Support Agile Transformations</a></div>
-    <div class="resource-post-link"><a href="http://www.liquidplanner.com/blog/why-we-hate-to-change/">Why We Hate Change</a></div>
-</div>
-<h5 class="resource-book-category parent">TRANSFORMATION AND TRANSITIONS BOOKS</h5>
-<div class="resource-book-link parent"><a href="http://www.amazon.com/The-Culture-Game-Tools-Manager/dp/0984875301/&amp;tag=notesfromatoo-20/&amp;tag=notesfromatoo-20">The Culture Game – Tools for the Agile Manager</a> - Daniel Mezick<span class="tiny-nav"> [AMAZON]</span></div>
+
+<?php
+	/*
+	<div id="top-message-section" class="top-message-box">
+<div class="inner-container"> <!-- non-full-width -->
+
+
+    <!-- ********************************************** -->
+    <!--                                                -->
+    <!-- TOP MESSAGE                                    -->
+    <!--                                                -->
+    <!-- ********************************************** -->
+
+    <div id="top-message-section" class="clearfix">
+        <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis congue elit purus, a ultricies enim venenatis non. Aliquam at efficitur ipsum, a eleifend sem.</h2>
+    </div> <!-- /top-message-section -->
+
+</div><!-- /.inner-container -->
+</div><!-- /.top-message-box -->
+*/
+?>
+
+<?php
+	// REMOVED
+	/*
+	<!-- ********************************************** -->
+<!--                                                -->
+<!-- LOGOS                                        -->
+<!--                                                -->
+<!-- ********************************************** -->
+
+<div id="logo-section" class="home-logo-slider clearfix">
+    <div class="inner-container">
+        <h2>Trusted by Leading Organizations Globally</h2>
+        <div id="logo-slider-container">
+            <span><img src="/wp-content/uploads/assets/logo_urban-outfitters.png" alt="Urban Outfitters" /></span>
+            <span><img src="/wp-content/uploads/assets/logo_covisint.png" alt="Covisint" /></span>
+            <span><img src="/wp-content/uploads/assets/logo_arc-teryx.png" alt="Arc'teryx" /></span>
+            <span><img src="/wp-content/uploads/assets/logo_sonos.png" alt="Sonos" /></span>
+            <span><img src="/wp-content/uploads/assets/logo_rakuten-marketing.png" alt="lRakuten Marketing" /></span>
+        </div>
+    </div> <!-- /.inner-container -->
+</div> <!-- /logo-section -->
+*/
+?>
+
+
+<!-- ********************************************** -->
+<!--                                                -->
+<!-- SOLUTION BLOCKS                                -->
+<!--                                                -->
+<!-- ********************************************** -->
+<div id="course-section" class="inner-container"> <!-- non-full-width -->
+    <div id="solution-block-1" class="solution-blocks">
+        <ul  class="solution-row solution-block-image">
+            <li id="" class="solution-block">
+            </li>
+            <li id="solution-block-2" class="solution-block solution-block-text">
+                <div class="solution-block-inner-container container-left">
+                    <h2 class="course-title-csm">Certified Scrum Master (CSM)<span class="registered">&reg;</span>&nbsp; Training Courses</h2>
+                    <p>Learn Scrum techniques to guide teams, projects, and organizations to enable the rapid delivery of valuable, superb results.</p>
+                    <p>Develop the skills and insights to make the shift from inflexible project management methods to Scrum practices. In this intensive, hands-on, two-day seminar you receive expert instruction, exercises, and case studies to deepen your knowledge and give you the practical experience to support success as a Scrum Master.</p>
+
+                    <a href="/courses/certified-scrum-agile-training">
+                        <div id="course-block-cta-2" class="cta-button course-block-cta-button course-info-csm">
+                            See All CSM Courses &rsaquo;
+                        </div>
+                    </a>
+                </div><!-- /.solution-block-inner-container -->
+            </li>
+        </ul>
+        <?php
+	     /*
+        <ul class="solution-row">
+        <li id="solution-block-3" class="solution-block solution-block-text">
+            <div class="solution-block-inner-container container-right">
+                <h2>Agile Leadership Training Courses</h2>
+                <p>Aliquam at efficitur ipsum, a eleifend sem. Cras mattis, urna in faucibus iaculis, metus elit hendrerit purus, fermentum aliquam libero urna nec augue. Fusce euismod semper sodales.</p>
+                <a href="/">
+                    <div id="course-block-cta-3" class="cta-button course-block-cta-button">
+                        Learn more &rsaquo;
+                    </div>
+                </a>
+            </div><!-- /.solution-block-inner-container -->
+        </li>
+        <li id="solution-block-4" class="solution-block solution-block-image">
+        </li>
+        </ul>
+        */
+        ?>
+    </div> <!-- /solution-blocks-section -->
+
+    <!-- ********************************************** -->
+    <!--                                                -->
+    <!-- CSM COURSE BUCKETS                             -->
+    <!--                                                -->
+    <!-- ********************************************** -->
+
+    <?php
+		// Get courses
+		// $number of posts -1 for all
+		// $start_date = timestamp (blank for today)
+		// $city
+		// $course_type CSM, CSPO, CAL, CSD
+		// $soldout Yes/No
+
+		$csm_meta_type = array('CSM');
+
+		$csm_courses = getCourses($posts = 4, $start_date = '', $city = '',$csm_meta_type, $soldout = '');
+
+		// DEBUG
+		// print_r($courses);
+
+
+	?>
+
+
+
+    <div id="course-blocks-section" class="course-blocks-box clearfix">
+
+        <div class="inner-container"> <!-- non-full-width -->
+
+            <div id="course-buckets-section-csm" class="course-buckets-section">
+                <ul class="course-buckets">
+
+                    <?php
+
+				$c_csm = 1; // course index
+
+				// Loop through courses and output each course bucket
+				foreach($csm_courses as $course){
+
+					// get the course post ID
+					$course_ID = $course -> ID;
+
+                    // Get course vars
+                    $course_name = get_post_meta($course_ID, 'post-option-course-name',true);
+                    $course_type = get_post_meta($course_ID, 'post-option-course-type',true);
+                    $course_city = get_post_meta($course_ID, 'post-option-city',true);
+                    $course_start = get_post_meta($course_ID, 'post-option-start-date',true);
+                    $course_end = get_post_meta($course_ID, 'post-option-end-date',true);
+                    $course_url = get_permalink($course_ID);
+                    $course_class = 'csm';
+
+                    ?>
+
+                    <!-- ********************************************** -->
+                    <!--                                                -->
+                    <!-- COURSE BUCKET <?php echo $c_csm; ?>                -->
+                    <!--                                                -->
+                    <!-- ********************************************** -->
+
+                    <li id="course-buckets-<?php echo $c; ?>" class="course-buckets-item course-buckets-<?php echo $course_class; ?>">
+                        <div id="bucket-contents-<?php echo $c; ?>" class="bucket-contents">
+                            <?php
+				  /*
+					<div id="bucket-icon-<?php echo $c; ?>" class="course-buckets-icon">
+                            <div class="vert-center">
+                                CITY
+
+                                <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+                                    <title>icon_infrastructure</title>
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="icons" stroke="none" stroke-width="1" fill-rule="evenodd">
+                                        <g id="icon-1"  class="icon-orange">
+                                            <g id="Group" transform="translate(5.000000, 5.000000)">
+                                                <path d="M22.7680911,25.0877061 L20.4264161,22.7465181 C20.056464,22.3761199 19.4877586,22.291651 19.0265607,22.5396371 C18.5364532,22.8025295 18.0169844,23.0175412 17.4835125,23.1792517 C16.9825639,23.3301212 16.6406179,23.7917639 16.6406179,24.3148385 L16.6406179,27.6258375 L13.3593821,27.6258375 L13.3593821,24.3148385 C13.3593821,23.7917639 13.0174361,23.3305729 12.5169392,23.1792517 C11.9825639,23.0175412 11.4635468,22.8016261 10.9729876,22.5396371 C10.5117897,22.291651 9.94308429,22.3761199 9.57358388,22.7460664 L7.23145722,25.0877061 L4.91191616,22.7677482 L7.25359111,20.4265603 C7.62354323,20.0566137 7.70756166,19.4883686 7.4604752,19.0271776 C7.19757882,18.5352706 6.98211221,18.0158097 6.82085103,17.4827976 C6.6690758,16.9827599 6.20742615,16.6403674 5.68479537,16.6403674 L2.37419821,16.6403674 L2.37419821,13.3596326 L5.68479537,13.3596326 C6.20742615,13.3596326 6.6690758,13.0172401 6.82085103,12.5167507 C6.98211221,11.9832869 7.19757882,11.4638259 7.4604752,10.9732741 C7.70801337,10.5116314 7.62399494,9.94293458 7.25359111,9.57298803 L4.91236787,7.23225175 L7.23190893,4.9118422 L9.57358388,7.25348189 C9.943536,7.62342844 10.5117897,7.70744561 10.9734393,7.46081458 C11.4653537,7.19747045 11.9843708,6.98200708 12.5169392,6.82074832 C13.0174361,6.66897538 13.3598338,6.20778439 13.3598338,5.68470978 L13.3598338,2.37416246 L16.6406179,2.37416246 L16.6406179,5.68470978 C16.6406179,6.20778439 16.9825639,6.66897538 17.4835125,6.82074832 C18.0160809,6.98200708 18.5355497,7.19747045 19.0274641,7.46036287 C19.488662,7.7065422 20.0569157,7.62297674 20.4264161,7.25303019 L22.7680911,4.9118422 L25.0880838,7.23225175 L22.7464089,9.57298803 C22.3764568,9.94293458 22.2924383,10.5116314 22.5395248,10.9732741 C22.8024212,11.4638259 23.0178878,11.9832869 23.1796007,12.5167507 C23.3313759,13.0172401 23.7925739,13.3596326 24.3156563,13.3596326 L27.6262535,13.3596326 L27.6262535,16.6403674 L24.3156563,16.6403674 C23.7925739,16.6403674 23.3313759,16.9827599 23.1796007,17.4827976 C23.0174361,18.0167131 22.8024212,18.5366258 22.5399765,19.0262742 C22.2924383,19.4874652 22.3764568,20.0566137 22.7468606,20.4265603 L25.0880838,22.7672965 L22.7680911,25.0877061 Z M27.2124853,21.5345931 L25.0212305,19.3438229 C25.0682085,19.2345103 25.1138314,19.1247459 25.1576475,19.0145299 L28.2568434,19.0145299 C29.2180865,19.0145299 30,18.2321765 30,17.2709478 L30,12.7286005 C30,11.7673718 29.2180865,10.9854701 28.2568434,10.9854701 L25.1576475,10.9854701 C25.1138314,10.8748024 25.0682085,10.765038 25.0207788,10.6557254 L27.2124853,8.46495521 C27.5417834,8.13521042 27.7233716,7.69750809 27.7233716,7.23225175 C27.7233716,6.766092 27.5417834,6.32884138 27.2124853,5.99954829 L23.9999097,2.7865693 C23.6706116,2.45772792 23.2329027,2.27659414 22.7676394,2.27659414 C22.302376,2.27659414 21.8646671,2.45772792 21.5349173,2.78747271 L19.3432108,4.97914628 C19.2347999,4.93171723 19.1250339,4.88609501 19.0143644,4.84227961 L19.0143644,1.74267861 C19.0143644,0.782353384 18.232451,0 17.2716596,0 L12.7292438,0 C11.767549,0 10.9856356,0.782353384 10.9856356,1.74267861 L10.9856356,4.84227961 C10.8749661,4.88654671 10.7656518,4.93171723 10.6563375,4.97914628 L8.46463095,2.78747271 C8.13533291,2.45817963 7.69762399,2.27659414 7.23190893,2.27659414 C6.7670973,2.27659414 6.32938838,2.45772792 5.99918692,2.78747271 L2.78796639,5.99954829 C2.45821664,6.32838967 2.27708013,6.766092 2.27708013,7.23225175 C2.27708013,7.69750809 2.45821664,8.13521042 2.78751468,8.46495521 L4.97922125,10.6557254 C4.93179149,10.765038 4.88616858,10.8748024 4.84235252,10.9854701 L1.74360828,10.9854701 C0.782365164,10.9854701 0,11.7673718 0,12.7286005 L0,17.2709478 C0,18.2321765 0.782365164,19.0145299 1.74360828,19.0145299 L4.84235252,19.0145299 C4.88616858,19.1247459 4.93179149,19.2345103 4.97922125,19.3433712 L2.78751468,21.5350448 C2.45821664,21.8643379 2.27662842,22.3020402 2.27662842,22.7677482 C2.27662842,23.233908 2.45821664,23.6711586 2.78751468,24 L5.99918692,27.2120756 C6.32848496,27.5418204 6.76619387,27.7225024 7.23190893,27.7225024 C7.69807571,27.7225024 8.13578462,27.540917 8.46417924,27.2125273 L10.6558858,25.020402 C10.7652001,25.0678311 10.8749661,25.1134533 10.9856356,25.1572687 L10.9856356,28.2559663 C10.9856356,29.2171949 11.767549,30 12.7287921,30 L17.2712079,30 C18.232451,30 19.0143644,29.2171949 19.0143644,28.2559663 L19.0143644,25.1572687 C19.1250339,25.113905 19.2347999,25.0678311 19.3436625,25.0208537 L21.535369,27.2116239 C21.8642154,27.5413687 22.3019243,27.7225024 22.7680911,27.7225024 C23.2333544,27.7225024 23.6710633,27.5418204 24.0003614,27.2125273 L27.2120336,24.0009034 C27.5417834,23.6716103 27.7233716,23.233908 27.7233716,22.7677482 C27.7233716,22.3020402 27.5417834,21.8638862 27.2124853,21.5345931 Z" id="outer"></path>
+                                                <path d="M11.9831836,14.9997875 C11.9831836,13.3368377 13.3366926,11.983274 15,11.983274 C16.6633074,11.983274 18.0163915,13.3368377 18.0163915,14.9997875 C18.0163915,16.6631623 16.6633074,18.016726 15,18.016726 C13.3366926,18.016726 11.9831836,16.6631623 11.9831836,14.9997875 Z M15,9.75 C12.1051481,9.75 9.75,12.1052435 9.75,14.9997875 C9.75,17.8951815 12.1051481,20.25 15,20.25 C17.8948519,20.25 20.25,17.8951815 20.25,14.9997875 C20.25,12.1052435 17.8948519,9.75 15,9.75" id="inner"></path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+
+                            </div>
+                        </div>
+                        */
+                        ?>
+                        <h3 class="course-buckets-services course-title-<?php echo $course_class; ?>"><?php echo $course_name; ?></h3>
+                        <div>in <?php echo $course_city; ?></div>
+                        <div><?php echo prettyDate($course_start,$course_end); ?></div>
+
+                        <div class="guarantee-wrap">
+                            <div class="guarantee-block block-block">
+                                <img class="date-guarantee-course-img" src="https://3hppfzjby0g1sxwjng1f4h1c-wpengine.netdna-ssl.com/wp-content/themes/phoenix-v1-09/images/certified.svg" scale="0">
+                                <div class="date-guarantee-text course-text">
+                                    <a href="/guaranteed-course-dates">Guaranteed course date</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="<?php echo $course_url; ?>">
+                            <div id="course-info-cta-<?php echo $c; ?>" class="cta-button course-info-button course-info-<?php echo $course_class; ?>">
+                                Learn More
+                            </div>
+                        </a>
+
+            </div>
+            </li>
+
+            <?php
+				$c_csm++; // increment course loop index counter
+				} // end course for loop
+
+			?>
+
+            </ul>
+        </div> <!-- /course-buckets-section -->
+
+
+
+        <script>
+            jQuery(document).ready(function(){
+                // handles rollovers to course sections
+                console.log('INLINE SCRIPT LOADED');
+                jQuery("#course-buckets-1,#course-buckets-2,#course-buckets-3,#course-buckets-4").hover(function(event){
+                        console.log('Bucket '+event.target.id);
+                        elem = event.target.id.replace('bucket-contents-','');
+                        console.log(event);
+                        console.log('ICON ON: #bucket-icon-'+elem);
+                        //     console.log(jQuery(event.target.id).next(".course-buckets-icon"));
+
+                        jQuery('#bucket-icon-'+elem).addClass("bucket-icon-hover");
+                        jQuery('#icon-'+elem).removeClass("icon-orange").addClass("icon-white");
+
+                        //  jQuery('#icon_infrastructure').css("fill","#fff");
+
+                    },
+                    function(){
+                        console.log('ICON OUT: #bucket-icon-'+elem);
+                        jQuery('#bucket-icon-'+elem).removeClass("bucket-icon-hover");
+                        jQuery('#icon-'+elem).removeClass("icon-white").addClass("icon-orange");
+
+
+                    }
+                );
+            });
+        </script>
+
+    </div > <!-- /.inner-container -->
+
+</div> <!-- /.course-buckets -->
+
+
+<?php
+	/* his sec tion commented out to preserver Leadership section
+
+	<!-- ********************************************** -->
+<!--                                                -->
+<!-- SOLUTION BLOCKS LEADERSHIP                     -->
+<!--                                                -->
+<!-- ********************************************** -->
+
+<div id="solution-block-4" class="solution-blocks">
+    <ul class="solution-row">
+        <li  id="solution-block-3" class="solution-block solution-block-text">
+            <div class="solution-block-inner-container container-left">
+                <h2>Agile Leadership Training</h2>
+                <p>Cras mattis, urna in faucibus iaculis, metus elit hendrerit purus, fermentum aliquam libero urna nec augue. Fusce euismod semper sodales</p>
+                <a href="/courses/agile-leadership-training">
+                    <div id="course-block-cta-3" class="cta-button course-block-cta-button">
+                        Learn More &rsaquo;
+                    </div>
+                </a>
+            </div><!-- /.solution-block-inner-container -->
+        </li>
+        <li id="solution-block-4" class="solution-block solution-block-image">
+        </li>
+    </ul>
+</div> <!-- /solution-blocks-section -->
+*/
+?>
+
+<!-- ********************************************** -->
+<!--                                                -->
+<!-- SOLUTION BLOCKS CSPO.                          -->
+<!--                                                -->
+<!-- ********************************************** -->
+
+<div id="solution-block-4" class="solution-blocks">
+    <ul class="solution-row">
+        <li  id="solution-block-3" class="solution-block solution-block-text">
+            <div class="solution-block-inner-container container-left">
+                <h2 class="course-title-cspo">Certified Scrum Product Owner (CSPO)<span class="registered">&reg;</span>&nbsp; Training Courses</h2>
+
+
+                <p>Explore the key role that a Product Owner holds and how to work with the Scrum team to lead the development process to deliver better quality products on time.</p>
+                <p>Obtain skills and techniques to assist you when determining which features are added to products and the order and priority of feature development. This intensive, hands-on, two-day seminar provides the tools for success with a blend of direct instruction, interactive group work, and practical exercises to gain skills and experience in the Product Owner role.</p>
+
+
+                <a href="/courses/certified-scrum-product-owner-cspo-training">
+                    <div id="course-block-cta-3" class="cta-button course-block-cta-button course-info-cspo">
+                        See All CSPO Courses &rsaquo;
+                    </div>
+                </a>
+            </div><!-- /.solution-block-inner-container -->
+        </li>
+        <li id="solution-block-4" class="solution-block solution-block-image">
+        </li>
+    </ul>
+</div> <!-- /solution-blocks-section -->
+
+
+<!-- ********************************************** -->
+<!--                                                -->
+<!-- CSM COURSE BUCKETS                             -->
+<!--                                                -->
+<!-- ********************************************** -->
+
+<?php
+		// Get courses
+		// $number of posts -1 for all
+		// $start_date = timestamp (blank for today)
+		// $city
+		// $course_type CSM, CSPO, CAL, CSD
+		// $soldout Yes/No
+
+		$cspo_meta_type = array('CSPO');
+
+		$cspo_courses = getCourses($posts = 4, $start_date = '', $city = '',$cspo_meta_type, $soldout = '');
+
+		// DEBUG
+		// print_r($courses);
+
+
+	?>
+
+<div id="course-blocks-section" class="course-blocks-box clearfix">
+
+    <div class="inner-container"> <!-- non-full-width -->
+
+        <div id="course-buckets-section-cspo" class="course-buckets-section">
+            <ul class="course-buckets">
+
+                <?php
+
+				$c_cspo = 1; // course index
+
+				// Loop through courses and output each course bucket
+				foreach($cspo_courses as $course){
+
+					// get the course post ID
+					$course_ID = $course -> ID;
+
+                // Get course vars
+                $course_name = get_post_meta($course_ID, 'post-option-course-name',true);
+                $course_type = get_post_meta($course_ID, 'post-option-course-type',true);
+                $course_city = get_post_meta($course_ID, 'post-option-city',true);
+                $course_start = get_post_meta($course_ID, 'post-option-start-date',true);
+                $course_end = get_post_meta($course_ID, 'post-option-end-date',true);
+                $course_url = get_permalink($course_ID);
+                $course_class = 'cspo';
+                ?>
+
+                <!-- ********************************************** -->
+                <!--                                                -->
+                <!-- COURSE BUCKET <?php echo $c_cspo; ?>                -->
+                <!--                                                -->
+                <!-- ********************************************** -->
+
+                <li id="course-buckets-<?php echo $c; ?>" class="course-buckets-item course-buckets-<?php echo $course_class; ?>">
+                    <div id="bucket-contents-<?php echo $c; ?>" class="bucket-contents">
+                        <?php
+				  /*
+					<div id="bucket-icon-<?php echo $c; ?>" class="course-buckets-icon">
+                        <div class="vert-center">
+                            CITY
+
+                            <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+                                <title>icon_infrastructure</title>
+                                <desc>Created with Sketch.</desc>
+                                <defs></defs>
+                                <g id="icons" stroke="none" stroke-width="1" fill-rule="evenodd">
+                                    <g id="icon-1"  class="icon-orange">
+                                        <g id="Group" transform="translate(5.000000, 5.000000)">
+                                            <path d="M22.7680911,25.0877061 L20.4264161,22.7465181 C20.056464,22.3761199 19.4877586,22.291651 19.0265607,22.5396371 C18.5364532,22.8025295 18.0169844,23.0175412 17.4835125,23.1792517 C16.9825639,23.3301212 16.6406179,23.7917639 16.6406179,24.3148385 L16.6406179,27.6258375 L13.3593821,27.6258375 L13.3593821,24.3148385 C13.3593821,23.7917639 13.0174361,23.3305729 12.5169392,23.1792517 C11.9825639,23.0175412 11.4635468,22.8016261 10.9729876,22.5396371 C10.5117897,22.291651 9.94308429,22.3761199 9.57358388,22.7460664 L7.23145722,25.0877061 L4.91191616,22.7677482 L7.25359111,20.4265603 C7.62354323,20.0566137 7.70756166,19.4883686 7.4604752,19.0271776 C7.19757882,18.5352706 6.98211221,18.0158097 6.82085103,17.4827976 C6.6690758,16.9827599 6.20742615,16.6403674 5.68479537,16.6403674 L2.37419821,16.6403674 L2.37419821,13.3596326 L5.68479537,13.3596326 C6.20742615,13.3596326 6.6690758,13.0172401 6.82085103,12.5167507 C6.98211221,11.9832869 7.19757882,11.4638259 7.4604752,10.9732741 C7.70801337,10.5116314 7.62399494,9.94293458 7.25359111,9.57298803 L4.91236787,7.23225175 L7.23190893,4.9118422 L9.57358388,7.25348189 C9.943536,7.62342844 10.5117897,7.70744561 10.9734393,7.46081458 C11.4653537,7.19747045 11.9843708,6.98200708 12.5169392,6.82074832 C13.0174361,6.66897538 13.3598338,6.20778439 13.3598338,5.68470978 L13.3598338,2.37416246 L16.6406179,2.37416246 L16.6406179,5.68470978 C16.6406179,6.20778439 16.9825639,6.66897538 17.4835125,6.82074832 C18.0160809,6.98200708 18.5355497,7.19747045 19.0274641,7.46036287 C19.488662,7.7065422 20.0569157,7.62297674 20.4264161,7.25303019 L22.7680911,4.9118422 L25.0880838,7.23225175 L22.7464089,9.57298803 C22.3764568,9.94293458 22.2924383,10.5116314 22.5395248,10.9732741 C22.8024212,11.4638259 23.0178878,11.9832869 23.1796007,12.5167507 C23.3313759,13.0172401 23.7925739,13.3596326 24.3156563,13.3596326 L27.6262535,13.3596326 L27.6262535,16.6403674 L24.3156563,16.6403674 C23.7925739,16.6403674 23.3313759,16.9827599 23.1796007,17.4827976 C23.0174361,18.0167131 22.8024212,18.5366258 22.5399765,19.0262742 C22.2924383,19.4874652 22.3764568,20.0566137 22.7468606,20.4265603 L25.0880838,22.7672965 L22.7680911,25.0877061 Z M27.2124853,21.5345931 L25.0212305,19.3438229 C25.0682085,19.2345103 25.1138314,19.1247459 25.1576475,19.0145299 L28.2568434,19.0145299 C29.2180865,19.0145299 30,18.2321765 30,17.2709478 L30,12.7286005 C30,11.7673718 29.2180865,10.9854701 28.2568434,10.9854701 L25.1576475,10.9854701 C25.1138314,10.8748024 25.0682085,10.765038 25.0207788,10.6557254 L27.2124853,8.46495521 C27.5417834,8.13521042 27.7233716,7.69750809 27.7233716,7.23225175 C27.7233716,6.766092 27.5417834,6.32884138 27.2124853,5.99954829 L23.9999097,2.7865693 C23.6706116,2.45772792 23.2329027,2.27659414 22.7676394,2.27659414 C22.302376,2.27659414 21.8646671,2.45772792 21.5349173,2.78747271 L19.3432108,4.97914628 C19.2347999,4.93171723 19.1250339,4.88609501 19.0143644,4.84227961 L19.0143644,1.74267861 C19.0143644,0.782353384 18.232451,0 17.2716596,0 L12.7292438,0 C11.767549,0 10.9856356,0.782353384 10.9856356,1.74267861 L10.9856356,4.84227961 C10.8749661,4.88654671 10.7656518,4.93171723 10.6563375,4.97914628 L8.46463095,2.78747271 C8.13533291,2.45817963 7.69762399,2.27659414 7.23190893,2.27659414 C6.7670973,2.27659414 6.32938838,2.45772792 5.99918692,2.78747271 L2.78796639,5.99954829 C2.45821664,6.32838967 2.27708013,6.766092 2.27708013,7.23225175 C2.27708013,7.69750809 2.45821664,8.13521042 2.78751468,8.46495521 L4.97922125,10.6557254 C4.93179149,10.765038 4.88616858,10.8748024 4.84235252,10.9854701 L1.74360828,10.9854701 C0.782365164,10.9854701 0,11.7673718 0,12.7286005 L0,17.2709478 C0,18.2321765 0.782365164,19.0145299 1.74360828,19.0145299 L4.84235252,19.0145299 C4.88616858,19.1247459 4.93179149,19.2345103 4.97922125,19.3433712 L2.78751468,21.5350448 C2.45821664,21.8643379 2.27662842,22.3020402 2.27662842,22.7677482 C2.27662842,23.233908 2.45821664,23.6711586 2.78751468,24 L5.99918692,27.2120756 C6.32848496,27.5418204 6.76619387,27.7225024 7.23190893,27.7225024 C7.69807571,27.7225024 8.13578462,27.540917 8.46417924,27.2125273 L10.6558858,25.020402 C10.7652001,25.0678311 10.8749661,25.1134533 10.9856356,25.1572687 L10.9856356,28.2559663 C10.9856356,29.2171949 11.767549,30 12.7287921,30 L17.2712079,30 C18.232451,30 19.0143644,29.2171949 19.0143644,28.2559663 L19.0143644,25.1572687 C19.1250339,25.113905 19.2347999,25.0678311 19.3436625,25.0208537 L21.535369,27.2116239 C21.8642154,27.5413687 22.3019243,27.7225024 22.7680911,27.7225024 C23.2333544,27.7225024 23.6710633,27.5418204 24.0003614,27.2125273 L27.2120336,24.0009034 C27.5417834,23.6716103 27.7233716,23.233908 27.7233716,22.7677482 C27.7233716,22.3020402 27.5417834,21.8638862 27.2124853,21.5345931 Z" id="outer"></path>
+                                            <path d="M11.9831836,14.9997875 C11.9831836,13.3368377 13.3366926,11.983274 15,11.983274 C16.6633074,11.983274 18.0163915,13.3368377 18.0163915,14.9997875 C18.0163915,16.6631623 16.6633074,18.016726 15,18.016726 C13.3366926,18.016726 11.9831836,16.6631623 11.9831836,14.9997875 Z M15,9.75 C12.1051481,9.75 9.75,12.1052435 9.75,14.9997875 C9.75,17.8951815 12.1051481,20.25 15,20.25 C17.8948519,20.25 20.25,17.8951815 20.25,14.9997875 C20.25,12.1052435 17.8948519,9.75 15,9.75" id="inner"></path>
+                                        </g>
+                                    </g>
+                                </g>
+                            </svg>
+
+                        </div>
+                    </div>
+                    */
+                    ?>
+                    <h3 class="course-buckets-services course-title-<?php echo $course_class; ?>"><?php echo $course_name; ?></h3>
+                    <div>in <?php echo $course_city; ?></div>
+                    <div><?php echo prettyDate($course_start,$course_end); ?></div>
+
+                    <!--
+                    <div class="guarantee-pill-wrap">
+                        <div class="guarantee-pill">
+                            <img class="date-guarantee course-img" src="/wp-content/uploads/assets/certified.svg"/>
+                            <p class="date-guarantee-text course-text"><a href="/guaranteed-course-dates">Guaranteed course date</a></p>
+                         </div>
+                    </div>
+                    -->
+                    <div class="guarantee-wrap">
+                        <div class="guarantee-block block-block">
+                            <img class="date-guarantee-course-img" src="https://3hppfzjby0g1sxwjng1f4h1c-wpengine.netdna-ssl.com/wp-content/themes/phoenix-v1-09/images/certified.svg" scale="0">
+                            <div class="date-guarantee-text course-text">
+                                <a href="/guaranteed-course-dates">Guaranteed course date</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="<?php echo $course_url; ?>">
+                        <div id="course-info-cta-<?php echo $c; ?>" class="cta-button course-info-button course-info-<?php echo $course_class; ?>">
+                            Learn More
+                        </div>
+                    </a>
+        </div>
+        </li>
+
+        <?php
+				$c_cspo++; // increment course loop index counter
+				} // end course for loop
+
+			?>
+
+        </ul>
+    </div> <!-- /course-buckets-section -->
+
+
+    <!-- BRIAN UHL forced this to be hidden July 18, 2019 -->
+    <?php if(false):?>
+
+    <!-- ********************************************** -->
+    <!--                                                -->
+    <!-- EMAIL SIGNUP                                    -->
+    <!-- Get Interest IDs from                          -->
+    <!-- https://us1.api.mailchimp.com/playground/      -->
+    <!-- See: You can use the Playgrounds in the Mailchimp Developer site located at developer.mailchimp.com
+    The Playground is a UI into the API and you can drill down using the Subresources into -> lists -> interest-categories -> interests.
+    Then choose the Response view and it will show the payload of the response that contains the id's you are looking for. -->
+    <!-- ********************************************** -->
+    <div id="email-section" class="clearfix">
+        <div class="inner-container">
+            <h2>Get the latest Agile courses & news delivered</h2>
+            <!-- Mail Chimp Email forms -->
+
+            <form id="get-courses" action="">
+                <input id="get-courses-email" class="shorty-text mailchimp-form" type="text" placeholder="Enter your email" />
+                <input id="get-courses-source" class="mailchimp-form" type="hidden" value="home get courses" />
+                <input id="get-courses-interest" type="hidden" class="mailchimp-form" value="091938da53" />
+                <!-- additional fields as required -->
+                <input id="get-courses-submit" class="cta-button email-cta-button mailchimp-form" type="submit" />
+            </form>
+
+        </div> <!-- /.inner container -->
+    </div> <!-- /case-study-section -->
+
+
+    <?php endif; ?>
+    <div class="inner-container">
+
+        <!-- ********************************************** -->
+        <!--                                                -->
+        <!-- NEWS BLOCKS                                    -->
+        <!--                                                -->
+        <!-- ********************************************** -->
+        <!--
+        <div id="news-blocks-section">
+            <ul class="news-blocks">
+                <li id="news-block-1" class="news-block-item">
+                    <div id="news-contents-1" class="news-contents">
+                        <div class="news-block-icon">
+                            <div class="vert-center">
+                                <img src="<?php echo $news1_icon; ?>">
+                            </div>
+                        </div>
+                        <div class="news-block-type"><?php echo $news1_type; ?></div>
+                        <div class="news-block-title"><?php echo $news1_headline; ?></div>
+                        <div class="news-cta-button-wrapper">
+                            <a href="<?php echo $news1_url; ?>">
+                                <div id="news-block-cta" class="cta-button news-cta-button">
+                                    <?php echo $news1_cta; ?>  &rsaquo;
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li id="news-block-2" class="news-block-item">
+                    <div id="news-contents-2" class="news-contents">
+                        <div class="news-block-icon">
+                            <div class="vert-center">
+                                <img src="<?php echo $news2_icon; ?>">
+                            </div>
+                        </div>
+                        <div class="news-block-type"><?php echo $news2_type; ?></div>
+                        <div class="news-block-title"><?php echo $news2_headline; ?></div>
+                        <div class="news-cta-button-wrapper">
+                            <a href="<?php echo $news2_url; ?>">
+                                <div id="news-block-cta" class="cta-button news-cta-button">
+                                    <?php echo $news2_cta; ?>  &rsaquo;
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li id="news-block-3" class="news-block-item">
+                    <div id="news-contents-3" class="news-contents">
+                        <div class="news-block-icon">
+                            <div class="vert-center">
+                                <img src="<?php echo $news3_icon; ?>">
+                            </div>
+                        </div>
+                        <div class="news-block-type"><?php echo $news3_type; ?></div>
+                        <div class="news-block-title"><?php echo $news3_headline; ?></div>
+                        <div class="news-cta-button-wrapper">
+                            <a href="<?php echo $news3_url; ?>">
+                                <div id="news-block-cta" class="cta-button news-cta-button">
+                                    <?php echo $news3_cta; ?>  &rsaquo;
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div> <!-- /news blocks-section -->
+
+    </div > <!-- /.inner-container -->
+
+</div> <!-- /page-home wrap -->
+<!-- ********************************************** -->
+<!--                                                -->
+<!-- FOOTER                                         -->
+<!--                                                -->
+<!-- ********************************************** -->
+
+<script>
+    jQuery('.cta-button').click(function(event){
+        var elem = event.target.id;
+        console.log('CLICK: '+elem);
+    });
+</script>
+
+<?php get_footer(); ?>
+
+
+[post_author_posts_link before="Written by: "]     [post_date before="Published on: "] <br><br>[post_comments before="Thoughts:<br>" zero="No comments yet"]<br><br>
+[post_categories before="Categories: "]<br>[post_tags before="Tags: "] [post_edit]
+
+
+
+[post_date before="PUBLISHED: "]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[post_author_posts_link before="BY: "]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[post_comments before="COMMENT:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" zero="0 COMMENTS"]<br><br>
+
+[post_categories before="Categories: "]<br>[post_tags before="Tags: "] [post_edit]

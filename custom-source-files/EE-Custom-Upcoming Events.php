@@ -451,6 +451,7 @@ class APR_EEW_Upcoming_Events  extends WP_Widget {
                             foreach ($event->venues() as $venue):
                                 $event_location = " in " . $venue->city();
                             endforeach;
+                            $event_location = $event_location == " in " ? "Live Online<br>Instructor Led" : $event_location;
                             $display_date = $show_dates ? get_display_dates($event, $date_range) : "";
                             if ( $event instanceof EE_Event && ( !is_single() || $post->ID != $event->ID() ) ):
                                 if ( $display_type == 'home' ):

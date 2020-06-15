@@ -124,3 +124,7 @@ blockquote::before { font-family: inherit!important; left: -25px; }
     .resource-main-menu-item { border-right: none; }
     .resource-main-menu-item-selected { border-right: none; }
 }
+.ee-upcoming-events-widget-li_a-csm .guarantee-wrap {
+    visibility:hidden;
+}
+.ping-list .comment-meta { background-color: #777!important; }
