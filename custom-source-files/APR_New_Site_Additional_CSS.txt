@@ -1,45 +1,731 @@
+CURRENT FOR JUNE 26, 2020 - Down to line 245 only, below is older
+
+.site-header > .wrap { border: none; }
 .site-header { background-color: #1e467c; }
 .nav-primary .genesis-nav-menu a:focus, .nav-primary .genesis-nav-menu a:hover, .nav-primary .genesis-nav-menu .current-menu-item > a { border-bottom: 3px solid #fff; color: #fff; }
 .genesis-nav-menu a, .genesis-nav-menu a:visited { color: #ddd; }
 .genesis-nav-menu .sub-menu a { color: #333; }
+
 .spco-ticket-info-dv .line-item-desc-spn, .spco-payment-info-dv .line-item-desc-spn { display: none; }
 .ee-reg-form-attendee-dv legend { display: none; }
-.hero-section .full-width-image { margin-top: -350px; }
-.hero-title { font-size: 4rem; color: #ffffff; font-family: 'Source Sans Pro', sans-serif!important; }
-.site-header > .wrap { border: none; }
-#breakthrough-page-title { background-color: rgba(0,0,0,0.4); }
-.front-page .widget-title { font-family: inherit!important; }
-h1, h2, h3, h4, h5, h6 { font-family: inherit!important; }
-#breakthrough-page-title { background-color: transparent; }
+.ee-registrations-list tr td:nth-of-type(2n), .ee-registrations-list tr th:nth-of-type(2n) { visibility: hidden; }
+.ee-registration-details-dv a { display: none; }
+#espresso-thank-you-page-ajax-content-dv #ee-ajax-loading-dv { display: none; }
+.single-espresso_events .entry-meta { display: none; }
+
 h1.entry-title { margin-bottom: 40px; }
+.home h1.entry-title { display: none; }
+h1, h2, h3, h4, h5, h6 { font-family: inherit!important; }
 h1 { font-size: 5rem; letter-spacing: normal!important; }
 h2 { font-size: 4rem; letter-spacing: normal!important; }
 h3 { font-size: 3rem; letter-spacing: normal!important; }
 h4 { font-size: 2rem; letter-spacing: normal!important; }
 h5 { font-size: 1rem; letter-spacing: normal!important; }
+
 a { color: #2842a1; text-decoration: none; }
 p a { text-decoration: underline; }
 a:visited { color: #00529b; }
 blockquote { font-size: 2.1rem; font-family: inherit!important; border-top: 1px solid #00529b; border-bottom: 1px solid #00529b; padding: 15px 0; }
 blockquote::before { font-family: inherit!important; left: -25px; }
+
+#hero-section { background-color: #00a0ae; min-height: 400px; width: 100%; position: relative; background-size: cover; }
+#hero-overlay { width: 100%; min-height: 400px; display: table; background-color: rgba(0,0,0,0.4); }
+#hero-content-wrap { height: 400px; width: 100%; display: table-cell; vertical-align: middle; }
+#hero-title h2 { font-size: 48px; font-weight: 400!important; line-height: 1.2; text-align: center; padding: 0 20%; color: #fff; text-transform: none!important; }
+#hero-cta { text-align: center; }
+.hero-cta-button { color: #fff; background-color: rgba(255,255,255,0.2); margin-top: 20px; border: 2px solid #fff; -webkit-transition: background-color .5s; transition: background-color .5s; }
+.cta-button { font-size: 12px; text-transform: uppercase; font-weight: 700; line-height: 40px; height: 40px; padding: 0 20px; text-align: center; display: inline-block; border-radius: 0; }
+.home .content-sidebar-wrap .content { padding: 0!important; }
+.footer-widgets li { background: none; }
+.footer-widgets a { color: #e0e0e0!important; }
+.footer-widgets .widget { margin-bottom: 0; }
+.footer-widgets { background-color: #3b3833; }
+
+#course-block-csm .course-block-image {
+    background-color: rgb(222, 196, 183);
+    background-image: url(/wp-content/uploads/2020/02/iStock_89127459_800x533.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+#course-block-cspo .course-block-image {
+    background-color: rgb(222, 196, 183);
+    background-image: url(/wp-content/uploads/2020/02/iStock_87618379_800x534.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+#course-block-a-csm .course-block-image {
+    background-color: rgb(222, 196, 183);
+    background-image: url(/wp-content/uploads/2019/09/iStock-502393388_1600x400.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+.course-block-row { display: table-row; }
+.course-block-text { background: rgba(255,255,255,0.93); }
+.course-block-text h2 { font-size: 28px; line-height:36px; margin-bottom: 35px; }
+.course-block-text p { font-size: 16px; line-height: 1.6; text-align: left; }
+#course-blocks-section { display: table; table-layout: fixed; width: 100%; }
+.course-block {
+    display: table-cell;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 40px;
+    text-align: left;
+    min-height: 300px;
+    height: 360px;
+    vertical-align: middle;
+}
+@media only screen and (max-width: 640px) {
+    .course-block { padding: 30px; }
+}
+@media only screen and (max-width: 480px) {
+    .course-row { position: relative; display: block; }
+    .course-row+.course-row { border-top: 1px solid #cccccc; }
+    .course-block { display: block; width: auto; min-height: auto; padding: 20px; margin-left: 0!important; }
+    .course-block.course-block-text { width: 100%; display: inline-block; position: relative; height: auto; }
+    .course-block-text h2 { padding-left: 0; }
+    .course-block-text p { padding-left: 0; }
+    .course-block-cta-button { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%; border: none; }
+    .course-block-inner-container a { display: inline-block; }
+}
+/* suppress some undesired space above the footer*/
+.entry { margin-bottom: 0; }
+@media only screen and (max-width: 800px) {
+    .footer-widget-area { margin-bottom: 25px; }
+}
+.postTable td { padding: 10px!important; }
+.resource-book-category,  .resource-child-term-header { margin: 10px 0 5px; font-size: 14px; text-transform: uppercase; color: #336699; }
+.resource-book-link, .resource-book-content, .resource-child-link { padding-left: 30px; }
+.tiny-nav { font-size: 10px; }
+.espresso-venue-dv .tags-links { 	display: none; }
+.espresso_venues .entry-meta { 	display: none; }
+.resource-main-menu { overflow: hidden; }
+.resource-main-menu-item { float: left; text-align: center; padding: 0 8px; border-right: 1px solid #000000; }
+.resource-main-menu-item-selected{ float: left; text-align: center; padding: 0 8px; border-right: 1px solid #000000; font-weight: bold; }
+.resource-main-menu div:last-child { border-right: none; }
+.subnav-menu-col {
+	column-gap:15px;
+  column-count:2;
+  columns:2;
+  float: left;
+  font-size: 12px;
+  line-height: 24px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  width: 100%;
+	background-color: rgba(222,240,250,.9);
+	padding: 10px 0;
+}
+
+.subnav-menu-items {
+    list-style-type: none;
+}
+@media only screen and (max-width: 750px) {
+    .subnav-menu-col { column-count:1; columns:1; }
+	.resource-main-menu-item { border-right: none; }
+	.resource-main-menu-item-selected { border-right: none; }
+}
+.ee-upcoming-events-widget-li_a-csm .guarantee-wrap {
+	visibility:hidden;
+}
+.comment-header, .ping-list .comment-meta { background-color: #777!important; }
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+  .sellingPoint img { width: 50px!important; }
+  .sellingPoint div { width: 200px!important; font-size: 16px!important; margin-top: 10px!important; }
+}
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+  #bioImage img { width: 335px!important; margin-left: 10px!important; }
+  #bioDetails { width: 570px!important; }
+}
+@media screen and (min-width: 801px) and (max-width: 1023px) {
+  #bioImage img { width: 275px!important; margin-left: 10px!important; }
+  #bioDetails { width: 455px!important; margin-left: 20px!important; }
+  #bioDetails h3 { font-size: 2.5rem!important; }
+  #bioDetails h4 { font-size: 2rem!important; margin: 10px 0!important; }
+  #bioDetails p { font-size: 1.35rem; }
+}
+@media screen and (max-width: 400px) {
+  .workshopItem { margin-bottom: 15px!important; }
+}
+@media screen and (max-width: 800px) {
+  .sellingPoint { width: 100%!important; }
+  #sellingFeaturesTitle { font-size: 28px!important; line-height: 36px!important; margin-bottom: 30px!important; }
+  #sellingFeatureList div { width: 100%!important; padding-right: 10px; }
+  #bioDetails { width: auto!important; margin: 0 15px!important; }
+  #bioImage img { width: 100%!important; margin-left: 10px!important; }
+  #bioDetails h3 { font-size: 2.5rem!important; text-align: center; }
+  #bioDetails h4 { font-size: 2.0rem!important; text-align: center; }
+  .sellingReason { width: 100%!important; padding: 10px!important; }
+  #learningContent h3 { font-size: 2.5rem!important; }
+  #workshopBlock h3 { font-size: 2.8rem!important; }
+  .workshopItemImage { margin-top: 15px; }
+  .workshopItemText { font-size: 15px; padding-right: 10px; }
+  #unstuckBlock h3 { padding-top: 170px!important; }
+  #unstuckDetails { width: auto!important; font-size: 14px; margin-top: 15px!important; padding-bottom: 5px!important; line-height: 1.5!important; }
+}
+@media screen and (max-width: 1024px) {
+  .workshopItemGroup { width: 100%!important; }
+}
+@media screen and (max-width: 1200px) {
+  #learningImage, #learningContent { width: 100%!important; }
+  #learningBlock { margin: 0!important; }
+  .reviewItem { width: 100%!important; padding: 0!important; }
+  .reviewItemImage { height: 100px!important;}
+}
+.sellingPoints { background-color: #333333; color: #dddddd; font-weight: bold; overflow: hidden; }
+.sellingPoints p { display: none; }
+.sellingPoint { width: 33%; float: left; }
+.sellingPoint img { width: 80px; float: left; margin: 10px 15px 10px 15px; }
+.sellingPoint div { width: 250px; font-size: 20px; display: inline-block; margin-top: 15px; }
+.introBlurb { background-color: #cccccc; font-size: 18px; font-weight: bold; padding: 25px 50px; color: #444444; text-align: center; margin-bottom: 0!important; }
+.page-id-29 p:empty { display:none; }
+.page-id-29 .entry-header{ display: none; }
+.page-id-29 .content-sidebar-wrap .content { padding: 0!important; }
+.page-id-29 #hero-section { min-height: 600px!important; background-size: cover; background-position: center bottom; }
+.page-id-29 #hero-overlay { height: 600px; background-color: rgba(255,255,255,.6)!important; }
+.page-id-29 #hero-title h2 { color: #000!important; font-weight: bold!important; margin-top: 100px!important; padding: 0; }
+.page-id-29 #hero-title h3 { color: #000!important; text-align: center; font-weight: normal; }
+.page-id-29 #hero-section .cta { margin-top: 20px!important; }
+.page-id-29 .cta-button { border-radius: 5px; border: 1px solid #f0831e; }
+.page-id-29 .cta-button:hover { border-color: #dddddd; color: #dddddd;}
+.cta { text-align: center; }
+.cta-left { text-align: left; }
+.cta .cta-button { font-size: 24px; padding: 10px 25px; height: 60px; }
+#sellingFeatures { margin: 60px auto; color: #333333; overflow: hidden; max-width: 650px; }
+#sellingFeaturesTitle { font-size: 32px; text-align: center; line-height: 40px; margin-bottom: 35px; }
+#sellingFeatureList div { float: left; width: 50%; }
+#sellingFeatureList li { list-style-type: circle!important; margin-bottom: 10px; }
+#sellingFeatureList { overflow: hidden; }
+#bioBlock { overflow: hidden; }
+#bioBlock .cta { clear: both; margin-top: 35px!important; }
+#bioImage { float: left; }
+#bioImage img { width: 325px; margin-left: 80px;}
+#bioDetails { float: left; margin-left: 40px; width: 600px; }
+#bioDetails h3 { font-weight: normal; }
+#bioDetails h4 { font-size: 2.2rem; font-weight: normal; margin: 20px 0 30px; }
+#sellingReasons { overflow: hidden; text-align: center; }
+#sellingReasons p { display: none; }
+#sellingReasons h3 { font-weight: normal; }
+.sellingReason { width: 33%; float: left; padding: 0 25px 25px 25px; }
+.sellingReason img { width: 175px; }
+#upcomingCourses { background-color: #eeeeee; padding: 40px; }
+#upcomingCourseContainer { background-color: #ffffff; max-width: 1000px; margin: 20px auto; padding: 10px;}
+#upcomingCourseContainer .ee-upcoming-events-widget-list-container { margin-bottom: 0; }
+#learningBlock { overflow: hidden; margin: 50px 0 30px 0; }
+#learningContent, #learningImage { width: 50%; float: right; }
+#learningImage img { width: 100%; }
+#learningContent { padding: 0 10px; }
+#learningContent h3 { font-weight: normal; }
+#learningContent p { font-size: 1.8rem; }
+.iconWrapper { width: 50px; height: 50px; }
+#userQuote { background-color: #eeeeee; padding: 15px 20px 20px 20px; border-left: 1px dotted #666666; }
+#userQuote p { font-size: 22px; }
+#userQuoteSignature { font-size: 16px; }
+#workshopBlock { overflow: hidden; margin: 50px 0; }
+#workshopBlock h3 { font-weight: normal; margin: 10px 0 40px; }
+.workshopItem { clear: both; }
+.workshopItemGroup { width: 50%; float: left; }
+.workshopItemImage { float: left; }
+.workshopItemImage img { width: 100px; }
+.workshopItemTitle { font-size: 24px; max-width: 100%; }
+.workshopItemText { font-size: 16px; max-width: 100%; }
+#unstuckBlock { height: 600px; padding: 0 20px; }
+#unstuckBlock h3 { padding-top: 240px; color: #fafafa; }
+#unstuckDetails { margin-top: 30px; background-color: #fafafa; width: 600px; font-size: 18px; padding: 10px 20px 1px 10px; }
+#reviewBlock { overflow: hidden; margin-bottom: 20px; }
+#reviewBlock p { display: none; }
+#reviewBlock h3 { padding: 60px 0 10px; font-weight: normal; }
+.reviewItem { width: 33%; float: left; padding: 25px; }
+.reviewItemImage { float: left; height: 120px;}
+.reviewItemImage img { width: 70px; }
+.reviewItemQuote { font-size: 16px; max-width: 100%; color: #434343; }
+.reviewItemAuthor { font-size: 14px; max-width: 100%; font-weight: bold; }
+#closingCTA { background-color: #434343; color: #fafafa; padding: 60px 0 10px;}
+#closingCTA h3 { font-weight: normal; color: #fafafa; font-size: 32px; }
+#closingCTA p { margin-bottom: 40px; font-size: 20px; }
+
+
+Priorto JUNE 26, 2020 - Down to line 478 only, below is older
+.site-header > .wrap { border: none; }
+.site-header { background-color: #1e467c; }
+.nav-primary .genesis-nav-menu a:focus, .nav-primary .genesis-nav-menu a:hover, .nav-primary .genesis-nav-menu .current-menu-item > a { border-bottom: 3px solid #fff; color: #fff; }
+.genesis-nav-menu a, .genesis-nav-menu a:visited { color: #ddd; }
+.genesis-nav-menu .sub-menu a { color: #333; }
+
+.spco-ticket-info-dv .line-item-desc-spn, .spco-payment-info-dv .line-item-desc-spn { display: none; }
+.ee-reg-form-attendee-dv legend { display: none; }
 .ee-registrations-list tr td:nth-of-type(2n), .ee-registrations-list tr th:nth-of-type(2n) { visibility: hidden; }
 .ee-registration-details-dv a { display: none; }
 #espresso-thank-you-page-ajax-content-dv #ee-ajax-loading-dv { display: none; }
-ul.ee-upcoming-events-widget-ul li { 
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-width: 25%;
-padding: 20px 5px;
-margin: 0 0 15px 0;
-text-align: center;
-background-color: #fff;
-width: 100%;
+.single-espresso_events .entry-meta { display: none; }
+
+h1.entry-title { margin-bottom: 40px; }
+.home h1.entry-title { display: none; }
+h1, h2, h3, h4, h5, h6 { font-family: inherit!important; }
+h1 { font-size: 5rem; letter-spacing: normal!important; }
+h2 { font-size: 4rem; letter-spacing: normal!important; }
+h3 { font-size: 3rem; letter-spacing: normal!important; }
+h4 { font-size: 2rem; letter-spacing: normal!important; }
+h5 { font-size: 1rem; letter-spacing: normal!important; }
+
+a { color: #2842a1; text-decoration: none; }
+p a { text-decoration: underline; }
+a:visited { color: #00529b; }
+blockquote { font-size: 2.1rem; font-family: inherit!important; border-top: 1px solid #00529b; border-bottom: 1px solid #00529b; padding: 15px 0; }
+blockquote::before { font-family: inherit!important; left: -25px; }
+
+#hero-section { background-color: #00a0ae; min-height: 400px; width: 100%; position: relative; background-size: cover; }
+#hero-overlay { width: 100%; min-height: 400px; display: table; background-color: rgba(0,0,0,0.4); }
+#hero-content-wrap { height: 400px; width: 100%; display: table-cell; vertical-align: middle; }
+#hero-title h2 { font-size: 48px; font-weight: 400!important; line-height: 1.2; text-align: center; padding: 0 20%; color: #fff; text-transform: none!important; }
+#hero-cta { text-align: center; }
+.hero-cta-button { color: #fff; background-color: rgba(255,255,255,0.2); margin-top: 20px; border: 2px solid #fff; -webkit-transition: background-color .5s; transition: background-color .5s; }
+.cta-button { font-size: 12px; text-transform: uppercase; font-weight: 700; line-height: 40px; height: 40px; padding: 0 20px; text-align: center; display: inline-block; border-radius: 0; }
+.home .content-sidebar-wrap .content { padding: 0!important; }
+.footer-widgets li { background: none; }
+.footer-widgets a { color: #e0e0e0!important; }
+.footer-widgets .widget { margin-bottom: 0; }
+.footer-widgets { background-color: #3b3833; }
+
+#course-block-csm .course-block-image {
+    background-color: rgb(222, 196, 183);
+    background-image: url(/wp-content/uploads/2020/02/iStock_89127459_800x533.jpg);
+    background-size: cover;
+    background-position: center center;
 }
-.ee-event-datetimes-ul { overflow: hidden; }
-.ee-upcoming-events-widget-li { border: 2px solid #f0831e; }
-.ee-event-datetimes-li { width: 100%!important; }
-.ee-upcoming-events-widget-title-h5 { margin: 0;}
-.ee-upcoming-events-widget-title-h5 a { font-size: 2.5rem!important; color: #f0831e!important; }
-.ee-event-datetimes-li strong, .ee-event-datetimes-li-timerange, .dashicons-clock, .dashicons-calendar, .ee-event-datetimes-li form, .ee-event-datetimes-li br { display: none; }
-.ee-event-datetimes-li-daterange { padding: 0 20px; }
+#course-block-cspo .course-block-image {
+    background-color: rgb(222, 196, 183);
+    background-image: url(/wp-content/uploads/2020/02/iStock_87618379_800x534.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+#course-block-a-csm .course-block-image {
+    background-color: rgb(222, 196, 183);
+    background-image: url(/wp-content/uploads/2019/09/iStock-502393388_1600x400.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+.course-block-row { display: table-row; }
+.course-block-text { background: rgba(255,255,255,0.93); }
+.course-block-text h2 { font-size: 28px; line-height:36px; margin-bottom: 35px; }
+.course-block-text p { font-size: 16px; line-height: 1.6; text-align: left; }
+#course-blocks-section { display: table; table-layout: fixed; width: 100%; }
+.course-block {
+    display: table-cell;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 40px;
+    text-align: left;
+    min-height: 300px;
+    height: 360px;
+    vertical-align: middle;
+}
+@media only screen and (max-width: 640px) {
+    .course-block { padding: 30px; }
+}
+@media only screen and (max-width: 480px) {
+    .course-row { position: relative; display: block; }
+    .course-row+.course-row { border-top: 1px solid #cccccc; }
+    .course-block { display: block; width: auto; min-height: auto; padding: 20px; margin-left: 0!important; }
+    .course-block.course-block-text { width: 100%; display: inline-block; position: relative; height: auto; }
+    .course-block-text h2 { padding-left: 0; }
+    .course-block-text p { padding-left: 0; }
+    .course-block-cta-button { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%; border: none; }
+    .course-block-inner-container a { display: inline-block; }
+}
+/* suppress some undesired space above the footer*/
+.entry { margin-bottom: 0; }
+@media only screen and (max-width: 800px) {
+    .footer-widget-area { margin-bottom: 25px; }
+}
+.postTable td { padding: 10px!important; }
+.resource-book-category,  .resource-child-term-header { margin: 10px 0 5px; font-size: 14px; text-transform: uppercase; color: #336699; }
+.resource-book-link, .resource-book-content, .resource-child-link { padding-left: 30px; }
+.tiny-nav { font-size: 10px; }
+.espresso-venue-dv .tags-links { 	display: none; }
+.espresso_venues .entry-meta { 	display: none; }
+.resource-main-menu { overflow: hidden; }
+.resource-main-menu-item { float: left; text-align: center; padding: 0 8px; border-right: 1px solid #000000; }
+.resource-main-menu-item-selected{ float: left; text-align: center; padding: 0 8px; border-right: 1px solid #000000; font-weight: bold; }
+.resource-main-menu div:last-child { border-right: none; }
+.subnav-menu-col {
+	column-gap:15px;
+  column-count:2;
+  columns:2;
+  float: left;
+  font-size: 12px;
+  line-height: 24px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  width: 100%;
+	background-color: rgba(222,240,250,.9);
+	padding: 10px 0;
+}
+
+.subnav-menu-items {
+    list-style-type: none;
+}
+@media only screen and (max-width: 750px) {
+    .subnav-menu-col { column-count:1; columns:1; }
+	.resource-main-menu-item { border-right: none; }
+	.resource-main-menu-item-selected { border-right: none; }
+}
+.ee-upcoming-events-widget-li_a-csm .guarantee-wrap {
+	visibility:hidden;
+}
+.comment-header, .ping-list .comment-meta { background-color: #777!important; }
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+.sellingPoint img { width: 50px!important; }
+.sellingPoint div { width: 200px!important; font-size: 16px!important; margin-top: 10px!important; }
+}
+@media screen and (max-width: 400px) {
+.workshopItem { margin-bottom: 15px!important; }
+}
+@media screen and (max-width: 800px) {
+  .sellingPoint { width: 100%!important; }
+  #sellingFeaturesTitle { font-size: 28px!important; line-height: 36px!important; margin-bottom: 30px!important; }
+  #sellingFeatureList div { width: 100%!important; padding-right: 10px; }
+  #bioDetails h3 { font-size: 2.5rem!important; text-align: center; }
+  #bioDetails h4 { font-size: 2.0rem!important; text-align: center; }
+  #bioDetails { width: auto!important; margin: 0 15px!important; }
+  .sellingReason { width: 100%!important; padding: 10px!important; }
+  #learningContent h3 { font-size: 2.5rem!important; }
+  #workshopBlock h3 { font-size: 2.8rem!important; }
+  .workshopItemImage { margin-top: 15px; }
+  .workshopItemText { font-size: 15px; padding-right: 10px; }
+  #unstuckBlock h3 { padding-top: 170px!important; }
+  #unstuckDetails { width: auto!important; font-size: 14px; margin-top: 15px!important; padding-bottom: 5px!important; line-height: 1.5!important; }
+}
+@media screen and (max-width: 1024px) {
+  .workshopItemGroup { width: 100%!important; }
+  #bioImage img { width: 275px; }
+}
+@media screen and (max-width: 1200px) {
+  #learningImage, #learningContent { width: 100%!important; }
+  #learningBlock { margin: 0!important; }
+  .reviewItem { width: 100%!important; padding: 0!important; }
+  .reviewItemImage { height: 100px!important;}
+  #bioImage img { width: 335px; }
+  #bioDetails { width: 500px!important; }
+}
+.sellingPoints { background-color: #333333; color: #dddddd; font-weight: bold; overflow: hidden; }
+.sellingPoints p { display: none; }
+.sellingPoint { width: 33%; float: left; }
+.sellingPoint img { width: 80px; float: left; margin: 10px 15px 10px 15px; }
+.sellingPoint div { width: 250px; font-size: 20px; display: inline-block; margin-top: 15px; }
+.introBlurb { background-color: #cccccc; font-size: 18px; font-weight: bold; padding: 25px 50px; color: #444444; text-align: center; margin-bottom: 0!important; }
+.page-id-29 p:empty { display:none; }
+.page-id-29 .entry-header{ display: none; }
+.page-id-29 .content-sidebar-wrap .content { padding: 0!important; }
+.page-id-29 #hero-section { min-height: 730px!important; }
+.page-id-29 #hero-overlay { height: 730px; background-color: rgba(255,255,255,.4)!important; }
+.page-id-29 #hero-title h2 { color: #000!important; font-weight: bold!important; margin-top: 100px!important; padding: 0; }
+.page-id-29 #hero-title h3 { color: #000!important; text-align: center; font-weight: normal; }
+.page-id-29 #hero-section .cta { margin-top: 60px!important; }
+.page-id-29 .cta-button { border-radius: 5px; }
+.cta { text-align: center;}
+#sellingFeatures { margin: 60px auto; color: #333333; overflow: hidden; max-width: 650px; }
+#sellingFeaturesTitle { font-size: 32px; text-align: center; line-height: 40px; margin-bottom: 35px; }
+#sellingFeatureList div { float: left; width: 50%; }
+#sellingFeatureList li { list-style-type: circle!important; margin-bottom: 10px; }
+#sellingFeatureList { overflow: hidden; }
+#bioBlock { overflow: hidden; }
+#bioBlock .cta { clear: both; margin-top: 35px!important; }
+#bioImage { float: left; }
+#bioImage img { width: 325px; }
+#bioDetails { float: left; margin-left: 40px; width: 600px; }
+#bioDetails h3 { font-weight: normal; }
+#bioDetails h4 { font-size: 2.2rem; font-weight: normal; margin: 20px 0 30px; }
+#sellingReasons { overflow: hidden; text-align: center; }
+#sellingReasons p { display: none; }
+#sellingReasons h3 { font-weight: normal; }
+.sellingReason { width: 33%; float: left; padding: 0 25px 25px 25px; }
+.sellingReason img { width: 175px; }
+#upcomingCourses { background-color: #eeeeee; padding: 40px; }
+#upcomingCourseContainer { background-color: #ffffff; max-width: 1000px; margin: 20px auto; padding: 10px;}
+#upcomingCourseContainer .ee-upcoming-events-widget-list-container { margin-bottom: 0; }
+#learningBlock { overflow: hidden; margin: 50px 0 30px 0; }
+#learningContent, #learningImage { width: 50%; float: right; }
+#learningContent { padding: 0 10px; }
+#learningContent h3 { font-weight: normal; }
+#learningContent p { font-size: 1.8rem; }
+.iconWrapper { width: 50px; height: 50px; }
+#userQuote { background-color: #eeeeee; padding: 15px 20px 20px 20px; border-left: 1px dotted #666666; }
+#userQuote p { font-size: 22px; }
+#userQuoteSignature { font-size: 16px; }
+#workshopBlock { overflow: hidden; margin: 50px 0; }
+#workshopBlock h3 { font-weight: normal; margin: 10px 0 40px; }
+.workshopItem { clear: both; }
+.workshopItemGroup { width: 50%; float: left; }
+.workshopItemImage { float: left; }
+.workshopItemImage img { width: 100px; }
+.workshopItemTitle { font-size: 24px; max-width: 100%; }
+.workshopItemText { font-size: 16px; max-width: 100%; }
+#unstuckBlock { height: 600px; padding: 0 20px; }
+#unstuckBlock h3 { padding-top: 240px; color: #fafafa; }
+#unstuckDetails { margin-top: 30px; background-color: #fafafa; width: 600px; font-size: 18px; padding: 10px 20px 1px 10px; }
+#reviewBlock { overflow: hidden; margin-bottom: 20px; }
+#reviewBlock p { display: none; }
+#reviewBlock h3 { padding: 60px 0 10px; font-weight: normal; }
+.reviewItem { width: 33%; float: left; padding: 25px; }
+.reviewItemImage { float: left; height: 120px;}
+.reviewItemImage img { width: 70px; }
+.reviewItemQuote { font-size: 16px; max-width: 100%; color: #434343; }
+.reviewItemAuthor { font-size: 14px; max-width: 100%; font-weight: bold; }
+#closingCTA { background-color: #434343; color: #fafafa; padding: 60px 0 10px;}
+#closingCTA h3 { font-weight: normal; color: #fafafa; font-size: 32px; }
+#closingCTA p { margin-bottom: 40px; font-size: 20px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.site-header > .wrap { border: none; }
+.site-header { background-color: #1e467c; }
+.nav-primary .genesis-nav-menu a:focus, .nav-primary .genesis-nav-menu a:hover, .nav-primary .genesis-nav-menu .current-menu-item > a { border-bottom: 3px solid #fff; color: #fff; }
+.genesis-nav-menu a, .genesis-nav-menu a:visited { color: #ddd; }
+.genesis-nav-menu .sub-menu a { color: #333; }
+
+.spco-ticket-info-dv .line-item-desc-spn, .spco-payment-info-dv .line-item-desc-spn { display: none; }
+.ee-reg-form-attendee-dv legend { display: none; }
+.ee-registrations-list tr td:nth-of-type(2n), .ee-registrations-list tr th:nth-of-type(2n) { visibility: hidden; }
+.ee-registration-details-dv a { display: none; }
+#espresso-thank-you-page-ajax-content-dv #ee-ajax-loading-dv { display: none; }
+.single-espresso_events .entry-meta { display: none; }
+
+h1.entry-title { margin-bottom: 40px; }
+.home h1.entry-title { display: none; }
+h1, h2, h3, h4, h5, h6 { font-family: inherit!important; }
+h1 { font-size: 5rem; letter-spacing: normal!important; }
+h2 { font-size: 4rem; letter-spacing: normal!important; }
+h3 { font-size: 3rem; letter-spacing: normal!important; }
+h4 { font-size: 2rem; letter-spacing: normal!important; }
+h5 { font-size: 1rem; letter-spacing: normal!important; }
+
+a { color: #2842a1; text-decoration: none; }
+p a { text-decoration: underline; }
+a:visited { color: #00529b; }
+blockquote { font-size: 2.1rem; font-family: inherit!important; border-top: 1px solid #00529b; border-bottom: 1px solid #00529b; padding: 15px 0; }
+blockquote::before { font-family: inherit!important; left: -25px; }
+
+#hero-section { background-color: #00a0ae; min-height: 400px; width: 100%; position: relative; background-size: cover; }
+#hero-overlay { width: 100%; min-height: 400px; display: table; background-color: rgba(0,0,0,0.4); }
+#hero-content-wrap { height: 400px; width: 100%; display: table-cell; vertical-align: middle; }
+#hero-title h2 { font-size: 48px; font-weight: 400!important; line-height: 1.2; text-align: center; padding: 0 20%; color: #fff; text-transform: none!important; }
+#hero-cta { text-align: center; }
+.hero-cta-button { color: #fff; background-color: rgba(255,255,255,0.2); margin-top: 20px; border: 2px solid #fff; -webkit-transition: background-color .5s; transition: background-color .5s; }
+.cta-button { font-size: 12px; text-transform: uppercase; font-weight: 700; line-height: 40px; height: 40px; padding: 0 20px; text-align: center; display: inline-block; border-radius: 0; }
+.home .content-sidebar-wrap .content { padding: 0!important; }
+.footer-widgets li { background: none; }
+.footer-widgets a { color: #e0e0e0!important; }
+.footer-widgets .widget { margin-bottom: 0; }
+.footer-widgets { background-color: #3b3833; }
+
+#course-block-csm .course-block-image {
+    background-color: rgb(222, 196, 183);
+    background-image: url(/wp-content/uploads/2020/02/iStock_89127459_800x533.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+#course-block-cspo .course-block-image {
+    background-color: rgb(222, 196, 183);
+    background-image: url(/wp-content/uploads/2020/02/iStock_87618379_800x534.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+#course-block-a-csm .course-block-image {
+    background-color: rgb(222, 196, 183);
+    background-image: url(/wp-content/uploads/2019/09/iStock-502393388_1600x400.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+.course-block-row { display: table-row; }
+.course-block-text { background: rgba(255,255,255,0.93); }
+.course-block-text h2 { font-size: 28px; line-height:36px; margin-bottom: 35px; }
+.course-block-text p { font-size: 16px; line-height: 1.6; text-align: left; }
+#course-blocks-section { display: table; table-layout: fixed; width: 100%; }
+.course-block {
+    display: table-cell;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 40px;
+    text-align: left;
+    min-height: 300px;
+    height: 360px;
+    vertical-align: middle;
+}
+@media only screen and (max-width: 640px) {
+    .course-block { padding: 30px; }
+}
+@media only screen and (max-width: 480px) {
+    .course-row { position: relative; display: block; }
+    .course-row+.course-row { border-top: 1px solid #cccccc; }
+    .course-block { display: block; width: auto; min-height: auto; padding: 20px; margin-left: 0!important; }
+    .course-block.course-block-text { width: 100%; display: inline-block; position: relative; height: auto; }
+    .course-block-text h2 { padding-left: 0; }
+    .course-block-text p { padding-left: 0; }
+    .course-block-cta-button { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%; border: none; }
+    .course-block-inner-container a { display: inline-block; }
+}
+/* suppress some undesired space above the footer*/
+.entry { margin-bottom: 0; }
+@media only screen and (max-width: 800px) {
+    .footer-widget-area { margin-bottom: 25px; }
+}
+.postTable td { padding: 10px!important; }
+.resource-book-category,  .resource-child-term-header { margin: 10px 0 5px; font-size: 14px; text-transform: uppercase; color: #336699; }
+.resource-book-link, .resource-book-content, .resource-child-link { padding-left: 30px; }
+.tiny-nav { font-size: 10px; }
+.espresso-venue-dv .tags-links { 	display: none; }
+.espresso_venues .entry-meta { 	display: none; }
+.resource-main-menu { overflow: hidden; }
+.resource-main-menu-item { float: left; text-align: center; padding: 0 8px; border-right: 1px solid #000000; }
+.resource-main-menu-item-selected{ float: left; text-align: center; padding: 0 8px; border-right: 1px solid #000000; font-weight: bold; }
+.resource-main-menu div:last-child { border-right: none; }
+.subnav-menu-col {
+	column-gap:15px;
+  column-count:2;
+  columns:2;
+  float: left;
+  font-size: 12px;
+  line-height: 24px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  width: 100%;
+	background-color: rgba(222,240,250,.9);
+	padding: 10px 0;
+}
+
+.subnav-menu-items {
+    list-style-type: none;
+}
+@media only screen and (max-width: 750px) {
+    .subnav-menu-col { column-count:1; columns:1; }
+	.resource-main-menu-item { border-right: none; }
+	.resource-main-menu-item-selected { border-right: none; }
+}
+.ee-upcoming-events-widget-li_a-csm .guarantee-wrap {
+	visibility:hidden;
+}
+.comment-header, .ping-list .comment-meta { background-color: #777!important; }
+
+
+
+
+@media screen and (min-width: 801px) and (max-width: 1200px) {
+.sellingPoint img { width: 50px!important; }
+.sellingPoint div { width: 200px!important; font-size: 16px!important; margin-top: 10px!important; }
+}
+@media screen and (max-width: 400px) {
+.workshopItem { margin-bottom: 15px!important; }
+}
+@media screen and (max-width: 800px) {
+  .sellingPoint { width: 100%!important; }
+  #sellingFeaturesTitle { font-size: 28px!important; line-height: 36px!important; margin-bottom: 30px!important; }
+  #sellingFeatureList div { width: 100%!important; padding-right: 10px; }
+  #bioDetails { width: auto!important; margin: 0 15px!important; }
+  #bioDetails h3 { font-size: 2.5rem!important; text-align: center; }
+  #bioDetails h4 { font-size: 2.0rem!important; text-align: center; }
+  .sellingReason { width: 100%!important; padding: 10px!important; }
+  #learningContent h3 { font-size: 2.5rem!important; }
+  #workshopBlock h3 { font-size: 2.8rem!important; }
+  .workshopItemImage { margin-top: 15px; }
+  .workshopItemText { font-size: 15px; padding-right: 10px; }
+  #unstuckBlock h3 { padding-top: 170px!important; }
+  #unstuckDetails { width: auto!important; font-size: 14px; margin-top: 15px!important; padding-bottom: 5px!important; line-height: 1.5!important; }
+}
+@media screen and (max-width: 1024px) {
+	.workshopItemGroup { width: 100%!important; }
+}
+@media screen and (max-width: 1200px) {
+  #bioImage img { width: 275px!important; }
+	#learningImage, #learningContent { width: 100%!important; }
+  #learningBlock { margin: 0!important; }
+  .reviewItem { width: 100%!important; padding: 0!important; }
+  .reviewItemImage { height: 100px!important;}
+  #bioImage img { width: 335px!important; }
+  #bioDetails { width: 500px!important; }
+}
+.sellingPoints { background-color: #333333; color: #dddddd; font-weight: bold; overflow: hidden; }
+.sellingPoints p { display: none; }
+.sellingPoint { width: 33%; float: left; }
+.sellingPoint img { width: 80px; float: left; margin: 10px 15px 10px 15px; }
+.sellingPoint div { width: 250px; font-size: 20px; display: inline-block; margin-top: 15px; }
+.introBlurb { background-color: #cccccc; font-size: 18px; font-weight: bold; padding: 25px 50px; color: #444444; text-align: center; margin-bottom: 0!important; }
+.page-id-29 p:empty { display:none; }
+.page-id-29 .entry-header{ display: none; }
+.page-id-29 .content-sidebar-wrap .content { padding: 0!important; }
+.page-id-29 #hero-section { min-height: 730px!important; }
+.page-id-29 #hero-overlay { height: 730px; background-color: rgba(255,255,255,.4)!important; }
+.page-id-29 #hero-title h2 { color: #000!important; font-weight: bold!important; margin-top: 100px!important; padding: 0; }
+.page-id-29 #hero-title h3 { color: #000!important; text-align: center; font-weight: normal; }
+.page-id-29 #hero-section .cta { margin-top: 60px!important; }
+.page-id-29 .cta-button { border-radius: 5px; }
+.cta { text-align: center;}
+#sellingFeatures { margin: 60px auto; color: #333333; overflow: hidden; max-width: 650px; }
+#sellingFeaturesTitle { font-size: 32px; text-align: center; line-height: 40px; margin-bottom: 35px; }
+#sellingFeatureList div { float: left; width: 50%; }
+#sellingFeatureList li { list-style-type: circle!important; margin-bottom: 10px; }
+#sellingFeatureList { overflow: hidden; }
+#bioBlock { overflow: hidden; }
+#bioBlock .cta { clear: both; margin-top: 35px!important; }
+#bioImage { float: left; }
+#bioImage img { width: 325px; }
+#bioDetails { float: left; margin-left: 40px; width: 600px; }
+#bioDetails h3 { font-weight: normal; }
+#bioDetails h4 { font-size: 2.2rem; font-weight: normal; margin: 20px 0 30px; }
+#sellingReasons { overflow: hidden; text-align: center; }
+#sellingReasons p { display: none; }
+#sellingReasons h3 { font-weight: normal; }
+.sellingReason { width: 33%; float: left; padding: 0 25px 25px 25px; }
+.sellingReason img { width: 175px; }
+#upcomingCourses { background-color: #eeeeee; padding: 40px; }
+#upcomingCourseContainer { background-color: #ffffff; max-width: 1000px; margin: 20px auto; padding: 10px;}
+#upcomingCourseContainer .ee-upcoming-events-widget-list-container { margin-bottom: 0; }
+#learningBlock { overflow: hidden; margin: 50px 0 30px 0; }
+#learningContent, #learningImage { width: 50%; float: right; }
+#learningImage img { width: 100%; }
+#learningContent { padding: 0 10px; }
+#learningContent h3 { font-weight: normal; }
+#learningContent p { font-size: 1.8rem; }
+.iconWrapper { width: 50px; height: 50px; }
+#userQuote { background-color: #eeeeee; padding: 15px 20px 20px 20px; border-left: 1px dotted #666666; }
+#userQuote p { font-size: 22px; }
+#userQuoteSignature { font-size: 16px; }
+#workshopBlock { overflow: hidden; margin: 50px 0; }
+#workshopBlock h3 { font-weight: normal; margin: 10px 0 40px; }
+.workshopItem { clear: both; }
+.workshopItemGroup { width: 50%; float: left; }
+.workshopItemImage { float: left; }
+.workshopItemImage img { width: 100px; }
+.workshopItemTitle { font-size: 24px; max-width: 100%; }
+.workshopItemText { font-size: 16px; max-width: 100%; }
+#unstuckBlock { height: 600px; padding: 0 20px; }
+#unstuckBlock h3 { padding-top: 240px; color: #fafafa; }
+#unstuckDetails { margin-top: 30px; background-color: #fafafa; width: 600px; font-size: 18px; padding: 10px 20px 1px 10px; }
+#reviewBlock { overflow: hidden; margin-bottom: 20px; }
+#reviewBlock p { display: none; }
+#reviewBlock h3 { padding: 60px 0 10px; font-weight: normal; }
+.reviewItem { width: 33%; float: left; padding: 25px; }
+.reviewItemImage { float: left; height: 120px;}
+.reviewItemImage img { width: 70px; }
+.reviewItemQuote { font-size: 16px; max-width: 100%; color: #434343; }
+.reviewItemAuthor { font-size: 14px; max-width: 100%; font-weight: bold; }
+#closingCTA { background-color: #434343; color: #fafafa; padding: 60px 0 10px;}
+#closingCTA h3 { font-weight: normal; color: #fafafa; font-size: 32px; }
+#closingCTA p { margin-bottom: 40px; font-size: 20px; }

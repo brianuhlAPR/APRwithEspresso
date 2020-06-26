@@ -1,0 +1,375 @@
+<style>
+    @media screen and (min-width: 801px) and (max-width: 1200px) {
+        .sellingPoint img { width: 50px!important; }
+        .sellingPoint div { width: 200px!important; font-size: 16px!important; margin-top: 10px!important; }
+    }
+    @media screen and (max-width: 400px) {
+        .workshopItem { margin-bottom: 15px!important; }
+    }
+    @media screen and (max-width: 800px) {
+        .sellingPoint { width: 100%!important; }
+        #sellingFeaturesTitle { font-size: 28px!important; line-height: 36px!important; margin-bottom: 30px!important; }
+        #sellingFeatureList div { width: 100%!important; padding-right: 10px; }
+        #bioDetails h3 { font-size: 2.5rem!important; text-align: center; }
+        #bioDetails h4 { font-size: 2.0rem!important; text-align: center; }
+        #bioDetails { width: auto!important; margin: 0 15px!important; }
+        .sellingReason { width: 100%!important; padding: 10px!important; }
+        #learningContent h3 { font-size: 2.5rem!important; }
+        #workshopBlock h3 { font-size: 2.8rem!important; }
+        .workshopItemImage { margin-top: 15px; }
+        .workshopItemText { font-size: 15px; padding-right: 10px; }
+        #unstuckBlock h3 { padding-top: 170px!important; }
+        #unstuckDetails { width: auto!important; font-size: 14px; margin-top: 15px!important; padding-bottom: 5px!important; line-height: 1.5!important; }
+    }
+    @media screen and (max-width: 1024px) {
+        .workshopItemGroup { width: 100%!important; }
+    }
+    @media screen and (max-width: 1200px) {
+        #learningImage, #learningContent { width: 100%!important; }
+        #learningBlock { margin: 0!important; }
+        .reviewItem { width: 100%!important; padding: 0!important; }
+        .reviewItemImage { height: 100px!important;}
+    }
+    .sellingPoints { background-color: #333333; color: #dddddd; font-weight: bold; overflow: hidden; }
+    .sellingPoints p { display: none; }
+    .sellingPoint { width: 33%; float: left; }
+    .sellingPoint img { width: 80px; float: left; margin: 10px 15px 10px 15px; }
+    .sellingPoint div { width: 250px; font-size: 20px; display: inline-block; margin-top: 15px; }
+    .introBlurb { background-color: #cccccc; font-size: 18px; font-weight: bold; padding: 25px 50px; color: #444444; text-align: center; margin-bottom: 0!important; }
+    .page-id-29 p:empty { display:none; }
+    .page-id-29 .entry-header{ display: none; }
+    .page-id-29 .content-sidebar-wrap .content { padding: 0!important; }
+    .page-id-29 #hero-section { min-height: 730px!important; }
+    .page-id-29 #hero-overlay { height: 730px; background-color: rgba(255,255,255,.4)!important; }
+    .page-id-29 #hero-title h2 { color: #000!important; font-weight: bold!important; margin-top: 100px!important; padding: 0; }
+    .page-id-29 #hero-title h3 { color: #000!important; text-align: center; font-weight: normal; }
+    .page-id-29 #hero-section .cta { margin-top: 60px!important; }
+    .page-id-29 .cta-button { border-radius: 5px; }
+    .cta { text-align: center;}
+    #sellingFeatures { margin: 60px auto; color: #333333; overflow: hidden; max-width: 650px; }
+    #sellingFeaturesTitle { font-size: 32px; text-align: center; line-height: 40px; margin-bottom: 35px; }
+    #sellingFeatureList div { float: left; width: 50%; }
+    #sellingFeatureList li { list-style-type: circle!important; margin-bottom: 10px; }
+    #sellingFeatureList { overflow: hidden; }
+    #bioBlock { overflow: hidden; }
+    #bioBlock .cta { clear: both; margin-top: 35px!important; }
+    #bioImage { float: left; }
+    #bioImage img { width: 470px; }
+    #bioDetails { float: left; margin-left: 40px; width: 600px; }
+    #bioDetails h3 { font-weight: normal; }
+    #bioDetails h4 { font-size: 2.2rem; font-weight: normal; margin: 20px 0 30px; }
+    #sellingReasons { overflow: hidden; text-align: center; }
+    #sellingReasons p { display: none; }
+    #sellingReasons h3 { font-weight: normal; }
+    .sellingReason { width: 33%; float: left; padding: 0 25px 25px 25px; }
+    .sellingReason img { width: 175px; }
+    #upcomingCourses { background-color: #eeeeee; padding: 40px; }
+    #upcomingCourseContainer { background-color: #ffffff; max-width: 1000px; margin: 20px auto; padding: 10px;}
+    #upcomingCourseContainer .ee-upcoming-events-widget-list-container { margin-bottom: 0; }
+    #learningBlock { overflow: hidden; margin: 50px 0 30px 0; }
+    #learningContent, #learningImage { width: 50%; float: right; }
+    #learningContent { padding: 0 10px; }
+    #learningContent h3 { font-weight: normal; }
+    #learningContent p { font-size: 1.8rem; }
+    .iconWrapper { width: 50px; height: 50px; }
+    #userQuote { background-color: #eeeeee; padding: 15px 20px 20px 20px; border-left: 1px dotted #666666; }
+    #userQuote p { font-size: 22px; }
+    #userQuoteSignature { font-size: 16px; }
+    #workshopBlock { overflow: hidden; margin: 50px 0; }
+    #workshopBlock h3 { font-weight: normal; margin: 10px 0 40px; }
+    .workshopItem { clear: both; }
+    .workshopItemGroup { width: 50%; float: left; }
+    .workshopItemImage { float: left; }
+    .workshopItemImage img { width: 100px; }
+    .workshopItemTitle { font-size: 24px; max-width: 100%; }
+    .workshopItemText { font-size: 16px; max-width: 100%; }
+    #unstuckBlock { height: 600px; padding: 0 20px; }
+    #unstuckBlock h3 { padding-top: 240px; color: #fafafa; }
+    #unstuckDetails { margin-top: 30px; background-color: #fafafa; width: 600px; font-size: 18px; padding: 10px 20px 1px 10px; }
+    #reviewBlock { overflow: hidden; margin-bottom: 20px; }
+    #reviewBlock p { display: none; }
+    #reviewBlock h3 { padding: 60px 0 10px; font-weight: normal; }
+    .reviewItem { width: 33%; float: left; padding: 25px; }
+    .reviewItemImage { float: left; height: 120px;}
+    .reviewItemImage img { width: 70px; }
+    .reviewItemQuote { font-size: 16px; max-width: 100%; color: #434343; }
+    .reviewItemAuthor { font-size: 14px; max-width: 100%; font-weight: bold; }
+    #closingCTA { background-color: #434343; color: #fafafa; padding: 60px 0 10px;}
+    #closingCTA h3 { font-weight: normal; color: #fafafa; font-size: 32px; }
+    #closingCTA p { margin-bottom: 40px; font-size: 20px; }
+</style>
+<div id="hero-section" style="background-image: url('/wp-content/uploads/2020/06/shutterstock_1690164100.jpg');">
+    <div id="hero-overlay">
+        <div id="hero-content-wrap">
+            <div id="hero-title" class="hero-title">
+                <h2>Certified ScrumMaster (CSM) Training</h2>
+                <h3>Our Most Popular Workshop Live Online</h3>
+            </div>
+            <div class="cta"><a href="#upcomingCourses"><div class="cta-button course-info-button course-info-csm">Register Now</div></a></div>
+        </div>
+    </div>
+</div>
+<div id="hero-section" style="display: none; background-image: url('/wp-content/uploads/2020/06/shutterstock_339639824.jpg');">
+    <div id="hero-overlay">
+        <div id="hero-content-wrap">
+            <div id="hero-title" class="hero-title">
+                <h2>Certified ScrumMaster (CSM) Training</h2>
+                <h3>Our Most Popular Workshop Live Online</h3>
+            </div>
+            <div class="cta"><a href="#upcomingCourses"><div class="cta-button course-info-button course-info-csm">Register Now</div></a></div>
+        </div>
+    </div>
+</div>
+
+<div class="sellingPoints">
+    <div class="sellingPoint"><img src="/wp-content/uploads/2020/06/site-icons-A-engage.png" /><div>Engaging Online Live Workshop</div></div>
+    <div class="sellingPoint"><img src="/wp-content/uploads/2020/06/site-icons-A-collaboration.png" /><div>Fun, Interactive Collaboration Tools</div></div>
+    <div class="sellingPoint"><img src="/wp-content/uploads/2020/06/site-icons-A-support.png" /><div>Post-course Follow-up, Ongoing Support</div></div>
+</div>
+
+<p class="introBlurb">Looking for ScrumMaster Certification but don’t want to sit through a boring course? Unimpressed by training mills? Want to be taught more than just theory, and would rather learn how to effectively put into practice?<br>You’ve found the right place.</p>
+
+<div id="sellingFeatures">
+    <div id="sellingFeaturesTitle">An Approach to Scrum<br>Training Unlike Any Other</div>
+    <ul id="sellingFeatureList">
+        <div>
+            <li>Hands-on learning of Scrum “what”, “how” and “why”</li>
+            <li>Expert advice for “Yes, but in real life...” questions</li>
+            <li>Techniques to reduce time to market and increase quality</li>
+        </div>
+        <div>
+            <li>Guidance to build a team that delivers value, not just features</li>
+            <li>Methods to create a culture of learning and continuous improvement</li>
+            <li>Additional support, training, and resources after the course, at no cost</li>
+        </div>
+    </ul>
+    <div class="cta"><a href="#upcomingCourses"><div class="cta-button course-info-button course-info-csm">Register Now</div></a></div>
+</div>
+
+<div id="bioBlock">
+    <div id="bioImage">
+        <img src="/wp-content/uploads/2019/09/headshot-facing-left-large-e1592834541770.jpg" alt="Certified Scrum Trainer Mark Levison, Agile Pain Relief Consulting" />
+    </div>
+    <div id="bioDetails">
+        <h3>Learn from the Scrum Expert<br>Who Keeps It Fun</h3>
+        <h4>Mark Levison is one of Canada's foremost experts in Scrum and Agile.</h4>
+        <p>For more than 20 years, Mark has been helping teams get more done and enjoy their work.</p>
+        <p>His training is well-known for being clear, compelling, and enjoyable. Throughout the course, you will learn by doing as Mark uses Scrum itself to facilitate the workshop! You’ll quickly realize that you’re putting the principles of Scrum into practice and already gaining experience, confidence, and inspiration.</p>
+        <p>Mark has trained over 4,000 people from every industry. He’s seen every type of organizational challenge and can help you.</p>
+    </div>
+</div>
+<div class="cta"><a href="#upcomingCourses"><div class="cta-button course-info-button course-info-csm">Register Now</div></a></div>
+
+<div id="sellingReasons">
+    <h3 style="text-align: center;">There's No Better Time to Invest in Your Team</h3>
+    <div class="sellingReason">
+        <img src="/wp-content/uploads/2020/06/noun_spark_613991.png" />
+        <h4>Spark Change</h4>
+        <div>Ignite new thinking and new perspectives in your organization</div>
+    </div>
+    <div class="sellingReason">
+        <img src="/wp-content/uploads/2020/06/noun_Idea_689281.png" />
+        <h4>Gain Experience</h4>
+        <div>Hands-on exercises, simulations, and case studies give you practical knowledge</div>
+    </div>
+    <div class="sellingReason">
+        <img src="/wp-content/uploads/2020/06/noun_learn-together_2797169.png" />
+        <h4>Reinforce Learning</h4>
+        <div>You're not alone after the workshop. We provide community support and motivating follow-up training.</div>
+    </div>
+</div>
+
+<div id="upcomingCourses">
+    <h3 style="text-align: center; font-weight: normal;">Upcoming Workshops</h3>
+    <div id="upcomingCourseContainer">[do_widget id=custom-ee-upcoming-events-widget-2]</div>
+</div>
+
+<div id="learningBlock">
+    <div id="learningImage"><img src="/wp-content/uploads/2020/06/shutterstock_1626893599.jpg" /></div>
+    <div id="learningContent">
+        <h3>Learning That Sticks With You</h3>
+        <p>The problem with many training sessions is that two weeks later you've forgotten 95% of everything you heard.</p>
+        <p>Here's what makes us different:  workshops designed with the science of learning so you gain hands-on experience and have greater retention. And then after the course we provide continued learning exercises, additional resources, and mentorship.</p>
+        <p>Ongoing training along with expert and community support help you remember, practice, and keep growing in what you learn.</p>
+        <div><a href="#upcomingCourses"><div class="cta-button course-info-button course-info-csm">Register Now</div></a></div>
+    </div>
+</div>
+
+<div id="userQuote">
+    <div class="iconWrapper">
+        <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" style="max-width:100%" height="100%"><path d="M23 14v15l-4.5 8H11l4.5-8H8V14h15zm19 0v15l-4.5 8H30l4.5-8H27V14h15z" fill="currentColor" fill-rule="evenodd" style=""></path></svg>
+    </div>
+    <p>I thought that you did a wonderful job of interacting with all of us and keeping us all engaged. I felt really involved and the technology components worked well. Zoom break out rooms; Mural for visualizing work and concepts; Google docs for team activities. They all came together really well. It was nice to be able to see and hear people."</p>
+    <div id="userQuoteSignature">—Online workshop attendee</div>
+</div>
+
+<div id="workshopBlock">
+    <h3 style="text-align: center;">Our Workshop is Different</h3>
+    <div class="workshopItemGroup">
+        <div class="workshopItem">
+            <div class="workshopItemImage"><img src="/wp-content/uploads/2020/06/noun_Scrum_2956730.png" /></div>
+            <div class="workshopItemTitle">Learn by Doing</div>
+            <div class="workshopItemText">Simulations and exercises will give you hands-on experience with Scrum.</div>
+        </div>
+        <div class="workshopItem">
+            <div class="workshopItemImage"><img src="/wp-content/uploads/2020/06/noun_Smiley_596935.png" /></div>
+            <div class="workshopItemTitle">Engaging &amp; Fun</div>
+            <div class="workshopItemText">This is not a boring slideshow as you flip through a binder—you'll be fully engaged and active.</div>
+        </div>
+        <div class="workshopItem">
+            <div class="workshopItemImage"><img src="/wp-content/uploads/2020/06/noun_User-Check_1942666.png" /></div>
+            <div class="workshopItemTitle">Great for First-Timers</div>
+            <div class="workshopItemText">You don't need any background in Scrum to dive in and learn. You’ll be supplied with preparation information.</div>
+        </div>
+    </div>
+    <div class="workshopItemGroup">
+        <div class="workshopItem">
+            <div class="workshopItemImage"><img src="/wp-content/uploads/2020/06/noun_group_1122984.png" /></div>
+            <div class="workshopItemTitle">Small Class Size</div>
+            <div class="workshopItemText">Receive individual attention and ample opportunities to ask your questions.</div>
+        </div>
+        <div class="workshopItem">
+            <div class="workshopItemImage"><img src="/wp-content/uploads/2020/06/noun_discussion_1670075.png" /></div>
+            <div class="workshopItemTitle">Stimulating Discussion</div>
+            <div class="workshopItemText">Work through real-life scenarios and challenges to develop a plan going forward.</div>
+        </div>
+        <div class="workshopItem">
+            <div class="workshopItemImage"><img src="/wp-content/uploads/2020/06/noun_relationships_2964493.png" /></div>
+            <div class="workshopItemTitle">Ongoing Support</div>
+            <div class="workshopItemText">Exclusive post-course learning and community forum. Our long-term support will help you stay motivated, improve, and succeed.</div>
+        </div>
+    </div>
+    <div class="cta"><a href="#upcomingCourses"><div class="cta-button course-info-button course-info-csm">Register Now</div></a></div>
+</div>
+
+<div id="unstuckBlock" style="background-image: url('/wp-content/uploads/2020/06/shutterstock_1437231806.jpg'); background-size: cover;">
+    <h3>You Can Get Unstuck</h3>
+    <div id="unstuckDetails">
+        <p>Are you frustrated with traditional ways of working? Are you dissatisfied with results and unsure how to change?</p>
+        <p>Learn how to adapt and respond to bottlenecks and changing markets.</p>
+        <p>You'll leave with new confidence because Scrum helps you identify changes and challenges so you can address them effectively.</p>
+    </div>
+</div>
+
+<div id="reviewBlock">
+    <h3 style="text-align: center;">Rave Reviews</h3>
+    <div style="clear: both;">
+        <div class="reviewItem">
+            <div class="reviewItemImage "><img src="/wp-content/uploads/2020/06/noun_testimonial_1051775.png" /></div>
+            <div class="reviewItemQuote">"Mark is an awesome instructor. He is the Yoda of the Scrum universe."</div>
+            <div class="reviewItemAuthor">—Tina-Yu</div>
+        </div>
+        <div class="reviewItem">
+            <div class="reviewItemImage "><img src="/wp-content/uploads/2020/06/noun_testimonial_1051775.png" /></div>
+            <div class="reviewItemQuote">"I've been to a few Scrum courses and this was the best I have attended."</div>
+            <div class="reviewItemAuthor">—Rafael</div>
+        </div>
+        <div class="reviewItem">
+            <div class="reviewItemImage "><img src="/wp-content/uploads/2020/06/noun_testimonial_1051775.png" /></div>
+            <div class="reviewItemQuote">"I wasn't sure what to expect given my non-technical background but Mark was an amazing facilitator."</div>
+            <div class="reviewItemAuthor">—Kristin</div>
+        </div>
+    </div>
+</div>
+
+<div id="closingCTA">
+    <h3 style="text-align: center;">Don't Put This Off</h3>
+    <p style="text-align: center;">See the difference Scrum can make. Grab your spot now.</p>
+    <div class="cta"><a href="#upcomingCourses"><div class="cta-button course-info-button course-info-csm">Register Now</div></a></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+.sellingPoints { background-color: #333333; color: #dddddd; font-weight: bold; overflow: hidden; }
+.sellingPoints p { display: none; }
+.sellingPoint { width: 33%; float: left; }
+.sellingPoint img { width: 80px; float: left; margin: 10px 15px 10px 15px; }
+.sellingPoint div { width: 250px; font-size: 20px; display: inline-block; margin-top: 15px; }
+.introBlurb { background-color: #cccccc; font-size: 18px; font-weight: bold; padding: 25px 50px; color: #444444; text-align: center; margin-bottom: 0!important; }
+.page-id-29 .entry-header{ display: none; }
+.page-id-29 .content-sidebar-wrap .content { padding: 0!important; }
+.page-id-29 #hero-section { min-height: 730px!important; }
+.page-id-29 #hero-overlay { height: 730px; background-color: rgba(255,255,255,.4)!important; }
+.page-id-29 #hero-title h2 { color: #000!important; font-weight: bold!important; margin-top: 100px!important; padding: 0; }
+.page-id-29 #hero-title h3 { color: #000!important; text-align: center; font-weight: normal; }
+.page-id-29 #hero-section .cta { margin-top: 60px!important; }
+.page-id-29 .cta-button { border-radius: 5px; }
+.cta { text-align: center;}
+#sellingFeatures { margin: 60px auto; color: #333333; overflow: hidden; max-width: 650px; }
+#sellingFeaturesTitle { font-size: 32px; text-align: center; line-height: 40px; margin-bottom: 35px; }
+#sellingFeatureList div { float: left; width: 50%; }
+#sellingFeatureList li { list-style-type: circle!important; margin-bottom: 10px; }
+#sellingFeatureList { overflow: hidden; }
+#bioBlock { overflow: hidden; }
+#bioBlock .cta { clear: both; margin-top: 35px!important; }
+#bioImage { float: left; }
+#bioImage img { width: 470px; }
+#bioDetails { float: left; margin-left: 40px; width: 600px; }
+#bioDetails h3 { font-weight: normal; }
+#bioDetails h4 { font-size: 2.2rem; font-weight: normal; margin: 20px 0 30px; }
+#sellingReasons { overflow: hidden; text-align: center; }
+#sellingReasons h3 { font-weight: normal; }
+.sellingReason { width: 33%; float: left; padding: 25px; }
+.sellingReason img { width: 175px; }
+#upcomingCourses { background-color: #eeeeee; padding: 40px; }
+#upcomingCourseContainer { background-color: #ffffff; max-width: 1000px; margin: 20px auto; padding: 10px;}
+#upcomingCourseContainer .ee-upcoming-events-widget-list-container { margin-bottom: 0; }
+#learningBlock { overflow: hidden; margin: 50px 0; }
+#learningContent, #learningImage { width: 50%; float: left; }
+#learningContent { padding: 10px; }
+#learningContent h3 { font-weight: normal; }
+#learningContent p { font-size: 1.8rem; }
+.iconWrapper { width: 50px; height: 50px; }
+#userQuote { background-color: #eeeeee; padding: 15px 20px 20px 20px; border-left: 1px dotted #666666; }
+#userQuote p { font-size: 22px; }
+#userQuoteSignature { font-size: 16px; }
+#workshopBlock { overflow: hidden; margin: 50px 0; }
+#workshopBlock h3 { font-weight: normal; margin: 10px 0 40px; }
+.workshopItemGroup { width: 50%; float: left; }
+.workshopItemImage { float: left; }
+.workshopItemImage img { width: 100px; }
+.workshopItemTitle { font-size: 24px; max-width: 100%; }
+.workshopItemText { font-size: 16px; max-width: 100%; }
+#unstuckBlock { height: 600px; padding-left: 20px; }
+#unstuckBlock h3 { padding-top: 240px; color: #fafafa; }
+#unstuckDetails { margin-top: 30px; background-color: #fafafa; width: 600px; font-size: 18px; padding: 10px 20px 1px 10px; }
+#reviewBlock { overflow: hidden; margin-bottom: 20px; }
+#reviewBlock p { display: none; }
+#reviewBlock h3 { padding: 60px 0 10px; font-weight: normal; }
+.reviewItem { width: 33%; float: left; padding: 25px; }
+.reviewItemImage { float: left; height: 120px;}
+.reviewItemImage img { width: 70px; }
+.reviewItemQuote { font-size: 16px; max-width: 100%; color: #434343; }
+.reviewItemAuthor { font-size: 14px; max-width: 100%; font-weight: bold; }
+#closingCTA { background-color: #434343; color: #fafafa; padding: 60px 0 10px;}
+#closingCTA h3 { font-weight: normal; color: #fafafa; font-size: 32px; }
+#closingCTA p { margin-bottom: 40px; font-size: 20px; }
+</style>
