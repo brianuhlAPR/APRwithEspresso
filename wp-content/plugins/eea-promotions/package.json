@@ -44,7 +44,7 @@
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-polyfill": "^6.26.0",
     "clean-webpack-plugin": "^0.1.18",
-    "codecov": "^3.0.1",
+    "codecov": "^3.6.5",
     "concurrently": "^3.5.1",
     "cross-env": "^5.1.4",
     "css-loader": "^0.28.11",
